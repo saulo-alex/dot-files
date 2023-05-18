@@ -1,6 +1,3 @@
-" -------- pathogen --------
-execute pathogen#infect()
-
 " -------- sintaxe highlight --------
 syntax enable
 
@@ -10,13 +7,12 @@ filetype plugin indent on
 " -----------------------------------------------
 "                  mapeamentos
 " -----------------------------------------------
-map <F2> :write!<CR>
-map <F3> :make<CR>
+map <C-s> :write!<CR>
+imap <C-s> <ESC>:write!<CR>a
 map <F5> :shell<CR>
-map <F8> :NERDTreeToggle<CR>
-map <F9> :TagbarToggle<CR>
 map <leader>b :bnext!<CR>
 map <leader>B :bprevious!<CR>
+map <leader>D :bdelete!<CR>
 " no Windows o CTRL-] para navegar entre tags não funciona!
 if exists("$WINDIR")
     map <leader>j :tag <C-r><C-w><CR>
@@ -43,10 +39,10 @@ set statusline=\ ≡\ [%-{toupper(&filetype)}]\ [%n]\ “%-F”\ %=\ ♫\ %m%r\ 
 
 if has("gui_running")
     "set guioptions-=m  " remove o menu
-    set guioptions-=T  " remove o toolbar
-    set guioptions-=r  " remove o scroll da direita
-    set guioptions-=L  " remove o scroll da esquerda
+    "set guioptions-=T  " remove o toolbar
+    "set guioptions-=r  " remove o scroll da direita
+    "set guioptions-=L  " remove o scroll da esquerda
     " ------ configuração do tema ------
-	colorscheme shirotelin
-	set guifont=Consolas:h10.2:w5:qCLEARTYPE
+    "colorscheme shirotelin
+    set guifont=Consolas:h10.5:qCLEARTYPE
 endif
