@@ -38,8 +38,208 @@ call plug#begin('~/.vim/plugged')
     Plug 'dracula/vim', { 'name': 'dracula' }
 call plug#end()
 
-" Tudo auxiliar está aqui (incluindo temas)
-source ~/.vimrc_functions
+" -----------------
+"  Previne o vim de sair usando C-q indevidamente ao fechar janelas
+"  Nota: a função deve não pode ser local uma vez que será usada com :map
+function! PreventExit()
+    if winnr('$') > 1 || tabpagenr('$') > 1 || confirm('Você deseja realmente sair?', '&Sim'."\n".'&Não') == 1
+        quit
+    endif
+endfunction
+
+function! FindAllColorschemes()
+    let g:colorschemes = []
+    let l:directories = split(&runtimepath, ',')
+
+    for l:directory in l:directories
+        let l:targets = split(glob(l:directory .. '/colors/*.vim'), "\n")
+        if len(l:targets) > 0
+            for l:target in l:targets
+                let l:matches = matchlist(l:target, '/\([^/]\+\)\.vim$')
+                let g:colorschemes = add(g:colorschemes, l:matches[1])
+            endfor
+        endif
+    endfor
+
+    let g:colorschemes = sort(g:colorschemes)
+endfunction
+
+function! PreviousColorScheme()
+    " Poderia utilizar a variável g:colors_name ou mesmo
+    " execute('colorscheme') porém alguns temas armazenam nessas variáveis
+    " nomes diferentes do nome do arquivo deles, e como :colorscheme depende
+    " do nome do arquivo, o script falharia nessas circustâncias, então
+    " prefiri utilizar uma variável a parte para não depender disso.
+    let l:index = index(g:colorschemes, g:colorscheme.name, g:colorscheme.index)
+    let l:newIndex = l:index - 1
+    
+    if l:newIndex < 0
+        let l:newIndex = len(g:colorschemes) - 1
+    endif
+    let g:colorscheme.name = g:colorschemes[l:newIndex]
+
+    execute('colorscheme ' .. g:colorscheme.name)
+    let g:colorscheme.index = l:newIndex
+    " redraw é necessário para evitar que a mensagem seja limpa antes
+    "  de ser visualizada pelo usuário após o refresh automático da tela
+    redraw | echom "Tema definido para" g:colorscheme.name g:colorscheme.index
+endfunction
+
+function! NextColorScheme()
+    " Poderia utilizar a variável g:colors_name ou mesmo
+    " execute('colorscheme') porém alguns temas armazenam nessas variáveis
+    " nomes diferentes do nome do arquivo deles, e como :colorscheme depende
+    " do nome do arquivo, o script falharia nessas circustâncias, então
+    " prefiri utilizar uma variável a parte para não depender disso.
+    let l:index = index(g:colorschemes, g:colorscheme.name, g:colorscheme.index)
+    let l:newIndex = l:index + 1
+    
+    if l:newIndex >= len(g:colorschemes)
+        let l:newIndex = 0
+    endif
+    let g:colorscheme.name = g:colorschemes[l:newIndex]
+
+    execute('colorscheme ' .. g:colorscheme.name)
+    let g:colorscheme.index = l:newIndex
+    " redraw é necessário para evitar que a mensagem seja limpa antes
+    "  de ser visualizada pelo usuário após o refresh automático da tela
+    redraw | echom "Tema definido para" g:colorscheme.name g:colorscheme.index
+endfunction
+
+function! ChangeFontSize(o)
+    let l:fontsize = matchstr(&guifont, '\d\+$')
+    let l:fontname = matchstr(&guifont, '^[a-zA-Z ]\+')
+
+    if (a:o == '+')
+        let l:fontsize = str2nr(l:fontsize) + 1 
+    else
+        let l:fontsize = str2nr(l:fontsize) - 1
+    endif
+
+    let l:actualfont = l:fontname . l:fontsize
+
+    echom "Setando a fonte: " . l:actualfont
+
+    execute "set guifont=" . substitute(l:actualfont, '\([ ]\)', '\\\1', 'g')
+endfunction
+
+" Chamada quando executa :colorscheme <nome> afim de atualizar as minhas
+" variáveis de tema
+function! ForceUpdateColorScheme(name)
+    let g:colorscheme.name = a:name 
+    let g:colorscheme.index = index(g:colorschemes, a:name)
+endfunction
+
+function! ApplyTheme()
+    let g:colorscheme = #{name: '', index: 0}
+    if has('termguicolors')
+        set termguicolors
+    endif
+
+    if has('gui_running')
+        "set guioptions-=m  " remove o menu
+        set guioptions-=T  " remove o toolbar
+        set guioptions-=r  " remove o scroll da direita
+        set guioptions-=L  " remove o scroll da esquerda
+        "set guifont=Hack\ Nerd\ Font\ Mono\ Regular\ 9.5
+        set guifont=Cascadia\ Code\ SemiLight\ 9.5
+        "set guifont=Cousine\ Nerd\ Font\ Mono\ 9
+    endif
+
+    let s:hour_now = strftime("%H")
+    let s:minute_now = strftime("%M")
+
+    set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m\ %=%{FugitiveStatusline()}\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
+
+    " ---- Dia: entre 7h as 17h15
+    if s:hour_now >= 7 && s:hour_now < 17 || (s:hour_now == 17 && s:minute_now <= 15)
+        if has('gui_running')
+            let g:colorscheme.name = 'eclipse'
+            let g:colorscheme.index = index(g:colorschemes, g:colorscheme.name)
+            execute('colorscheme ' .. g:colorscheme.name)
+            set background=light
+        else
+            colorscheme black
+            set background=dark
+        endif
+    else
+        colorscheme black
+        set background=dark
+        "let g:colorscheme.name = 'wildcharm'
+        "let g:colorscheme.index = index(g:colorschemes, g:colorscheme.name)
+        "execute('colorscheme ' .. g:colorscheme.name)
+        "set background=dark
+    endif
+    "highlight ModeMsg term=bold ctermfg=white ctermbg=darkred
+    "highlight Normal guibg=NONE ctermbg=NONE
+endfunc
+
+function! SetupLangServers()
+    " as variáveis precisam ser globais para funcionar no autocmd uma vez que
+    " elas precisam existir quando ele é chamado
+    let g:lspOptions = {'autoHighlightDiags': v:true, 'autoComplete': v:false}
+    autocmd User LspSetup call LspOptionsSet(g:lspOptions)
+
+    let g:lspServers = [{
+                \           'name': 'cfamilylang',
+                \           'filetype': ['c', 'cpp'],
+                \           'path': '/usr/bin/clangd',
+                \           'args': ['--background-index']
+                \      },
+                \      {
+                \           'name': 'bashlang',
+                \           'filetype': ['sh', 'bash'],
+                \           'path': '/usr/bin/bash-language-server',
+                \           'args': ['start']
+                \      },
+                \      {
+                \           'name': 'jslang',
+                \           'filetype': ['javascript', 'typescript'],
+                \           'path': '/usr/bin/typescript-language-server',
+                \           'args': ['--stdio']
+                \      },
+                \      {
+                \           'name': 'phplang',
+                \           'filetype': ['php'],
+                \           'path': '/usr/bin/intelephense',
+                \           'args': ['--stdio']
+                \      },
+                \     ]
+    autocmd User LspSetup call LspAddServer(g:lspServers)
+endfunction
+
+" Função para verificar se um buffer está vazio
+function! IsBufferEmpty(bufnr) abort
+    " Obtém todas as linhas do buffer
+    let lines = getbufline(a:bufnr, 1, '$')
+    " Verifica se todas as linhas estão vazias
+    return len(lines) == 1 && empty(lines[0])
+endfunction
+
+" Função para deletar buffers vazios não ativos
+function! DeleteEmptyBuffers() abort
+    " Lista de buffers para deletar
+    let buffers_to_delete = []
+
+    " Itera sobre todos os buffers abertos
+    for buf in getbufinfo({'buflisted': 1})
+        " Verifica se o buffer está vazio e não está ativo
+        if IsBufferEmpty(buf.bufnr) && buf.bufnr != bufnr('%')
+            call add(buffers_to_delete, buf.bufnr)
+        endif
+    endfor
+
+    " Deleta os buffers vazios
+    if !empty(buffers_to_delete)
+        execute 'bdelete ' . join(buffers_to_delete, ' ')
+        echo 'Buffers vazios deletados: ' . join(buffers_to_delete, ', ')
+    else
+        echo 'Nenhum buffer vazio encontrado.'
+    endif
+endfunction
+
+" Comando para chamar a função
+command! DeleteEmptyBuffers call DeleteEmptyBuffers()
 
 " -----------------------------------------------
 "                  mapeamentos
