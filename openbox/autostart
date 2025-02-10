@@ -1,0 +1,7 @@
+~/.screenlayout/mode-only-external.sh &
+hsetroot -solid "#07000d" &
+~/.fehbg &
+picom &
+tint2 &
+(sleep 2 && pa-applet) &
+(sleep 2 && dropbox) &
