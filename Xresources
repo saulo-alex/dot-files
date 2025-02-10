@@ -1,21 +1,150 @@
-XTerm.termName: xterm-256color
-XTerm.vt100.locale: true
-XTerm.vt100.metaSendsEscape: true
-XTerm.vt100.backarrowKey: false
-XTerm.ttyModes: erase ^?
-XTerm.vt100.saveLines: 8192
-XTerm.vt100.jumpScroll: true
-XTerm.vt100.scrollBar: false
-XTerm.vt100.geometry: 100x35
-XTerm.vt100.reverseVideo: true
-XTerm.vt100.faceName: Dina:size=9:antialias=true
+! Global
+! Não remova isso afim de não ter inconsistências no tamanho das fontes
+! de GTK2, GTK3, GTK4 e QT
+Xft.dpi: 96
+! xcalc
+xcalc*ti.button1.vertDistance: 4
+xcalc*ti.button2.vertDistance: 4
+xcalc*ti.button3.vertDistance: 4
+xcalc*ti.button4.vertDistance: 4
+xcalc*ti.button5.vertDistance: 4
+xcalc*ti.background: gray90
+xcalc*ti.bevel.borderColor: gray65
+xcalc*ti.bevel.borderWidth: 1
+xcalc*ti.bevel.vertDistance: 4
+xcalc*ti.bevel.defaultDistance: 0
+xcalc*ti.bevel.background: rgb:b/c/b
+xcalc*ti.bevel.screen*background: rgb:b/c/b
+xcalc*ti.bevel.screen.borderColor: rgb:b/c/b
+xcalc*ti.bevel.screen.vertDistance: 10
+xcalc*ti.bevel.screen.horizDistance: 10
+xcalc*ti.bevel.screen*left: chainLeft
+xcalc*ti.bevel.screen*right: chainRight
+xcalc*ti.bevel.screen*top: chainTop
+xcalc*ti.bevel.screen*bottom: chainBottom
+xcalc*ti.bevel.screen*LCD.foreground: gray10
+xcalc*ti.bevel.screen*INV.vertDistance: 0
+xcalc*ti.Command.borderColor: gray65
+xcalc*ti.Command.background: gray85
+xcalc*ti.Command.foreground: gray30
+xcalc*ti.button5.background: rgb:e/b/b
+xcalc*ti.button20.background: rgb:e/d/c
+xcalc*ti.button25.background: rgb:e/d/c
+xcalc*ti.button30.background: rgb:e/d/c
+xcalc*ti.button35.background: rgb:e/d/c
+xcalc*ti.button40.background: rgb:b/b/e
+xcalc*ti.button22.background: gray95
+xcalc*ti.button23.background: gray95
+xcalc*ti.button24.background: gray95
+xcalc*ti.button27.background: gray95
+xcalc*ti.button28.background: gray95
+xcalc*ti.button29.background: gray95
+xcalc*ti.button32.background: gray95
+xcalc*ti.button33.background: gray95
+xcalc*ti.button34.background: gray95
+xcalc*ti.button37.background: gray95
+xcalc*ti.button38.background: gray95
+calc*ti.button39.background: gray95
 
-XClock*foreground: #fbfbfb
-XClock*background: #000018
-XClock*update: 1
-XClock*geometry:          210x210+1020+12
-XClock.Clock.majorColor:  rgba:f0/f0/19/7b
-XClock.Clock.minorColor:  rgba:a0/c0/f0/c0
-XClock.Clock.hourColor:   rgba:c9/66/11/72
-XClock.Clock.minuteColor: rgba:00/82/9f/72
-XClock.Clock.secondColor: rgba:50/93/30/6f
+! xclock
+xclock*analog: false
+xclock*brief: true
+xclock*foreground: white
+xclock*background: black
+
+! xterm
+xterm.termName: xterm-256color
+xterm.ttyModes: erase ^?
+!xterm.vt100.background: #000000
+!xterm.vt100.foreground: #b2b2b2
+xterm.vt100.faceName: IBM Plex Mono:style=Medium:size=9:antialias=true
+xterm.vt100.allowBoldFonts: false
+xterm.vt100.alternateScroll: true
+xterm.vt100.multiScroll: true
+xterm.vt100.scrollTtyOutput: false
+xterm.vt100.scrollKey: true
+xterm.vt100.jumpScroll: true
+xterm.vt100.fastScroll: true
+xterm.vt100.geometry: 115x40
+uxterm.vt100.geometry: 115x40
+xterm.vt100.locale: true
+xterm.vt100.metaSendsEscape: true
+xterm.vt100.backarrowKey: false
+xterm.vt100.saveLines: 8192
+xterm.vt100.selectToClipboard: true
+! permite selecionar com mouse no vim
+xterm.vt100.allowSendEvents: false
+xterm.vt100.scrollBar: false
+xterm.vt100.rightScrollBar: true
+xterm.vt100.bellIsUrgent: true
+xterm.vt100.translations: #override \
+    Ctrl Shift <Key>Up: scroll-back(1) \n\
+    Ctrl Shift <Key>Down: scroll-forw(1) \n\
+    Ctrl Shift <Key>Home: scroll-to(begin) \n\
+    Ctrl Shift <Key>End: scroll-to(end)
+xterm.vt100.cursorColor: .XtDefaultForeground
+xterm.vt100.dynamicColors: true
+xterm.vt100.highlightColorMode: true
+xterm.vt100.alwaysHighlight: true
+xterm.vt100.cursorBlink: true
+! --- cores baseadas no tema padrão do xfce4-terminal
+! black
+!xterm.vt100.color0: #000000
+! red
+!xterm.vt100.color1: #aa0000
+! green
+!xterm.vt100.color2: #00aa00
+! yellow
+!xterm.vt100.color3: #aa5500
+! blue
+!xterm.vt100.color4: #0000aa
+! violet
+!xterm.vt100.color5: #aa00aa
+! magenta
+!xterm.vt100.color6: #00aaaa
+! white
+!xterm.vt100.color7: #cccccc
+! bright black
+!xterm.vt100.color8: #555555
+! bright red
+!xterm.vt100.color9: #ff5555
+! bright green
+!xterm.vt100.color10: #55ff55
+! bright yellow
+!xterm.vt100.color11: #ffff55
+! bright blue
+!xterm.vt100.color12: #5555ff
+! bright violet
+!xterm.vt100.color13: #ff55ff
+! bright magenta
+!xterm.vt100.color14: #55ffff
+! bright white
+!xterm.vt100.color15: #ffffff
+
+!! Theme based on xterm with high contrast
+xterm.vt100.foreground:   #ffffff
+xterm.vt100.background:   #000000
+! black
+xterm.vt100.color0:  #777777
+xterm.vt100.color8:  #000000
+! red
+xterm.vt100.color1:  #ff0000 
+xterm.vt100.color9:  #ff7777 
+! green
+xterm.vt100.color2:  #00ff00 
+xterm.vt100.color10: #77ff77 
+! yellow
+xterm.vt100.color3:  #ffff00
+xterm.vt100.color11: #ffff77
+! blue
+xterm.vt100.color4:  #0000ff
+xterm.vt100.color12: #7777ff
+! magenta
+xterm.vt100.color5:  #ff00ff
+xterm.vt100.color13: #ff77ff
+! cyan
+xterm.vt100.color6:  #00ffff
+xterm.vt100.color14: #77ffff
+! white
+xterm.vt100.color7:  #b2b2b2 
+xterm.vt100.color15: #ffffff 
