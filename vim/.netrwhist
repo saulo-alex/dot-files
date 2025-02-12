@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/saulo/Code/Meu Git/lib_ds/src/linked-list'
+let g:netrw_dirhist_3='/home/saulo/Code/Meu Git/lib_ds/src'
+let g:netrw_dirhist_2='/home/saulo/Code/Meu Git/lib_ds'
+let g:netrw_dirhist_1='/home/saulo/Code/Meu Git'
+let g:netrw_dirhist_0='/home/saulo/Code'
+let g:netrw_dirhist_9='/home/saulo'
+let g:netrw_dirhist_8='/home/saulo/Code/Meu Git/lib_ds/include'
+let g:netrw_dirhist_7='/home/saulo/Code/Meu Git/lib_ds/include/linked-list'
+let g:netrw_dirhist_6='/home/saulo/Code/Meu Git/lib_ds/include'
+let g:netrw_dirhist_5='/home/saulo/Code/Meu Git/lib_ds'
