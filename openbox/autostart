@@ -1,6 +1,7 @@
+~/.local/bin/set-desktop-theme.sh
 ~/.screenlayout/mode-dual.sh &
 # hsetroot -solid "#07000d" &
-(sleep 2 && ~/.local/bin/set_desktop_theme.sh) &
+(sleep 2 && ~/.local/bin/set-desktop-wallpaper.sh) &
 # ~/.fehbg &
 picom &
 tint2 &
