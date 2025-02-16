@@ -389,22 +389,22 @@
     </keybind>
     <keybind key="W-C-S-Up">
       <action name="Execute">
-        <command>~/.local/bin/extmon-brightness.sh +</command>
+        <command>~/.local/bin/set-external-monitor-backlight.sh + notify</command>
       </action>
     </keybind>
     <keybind key="W-C-S-Down">
       <action name="Execute">
-        <command>~/.local/bin/extmon-brightness.sh -</command>
+        <command>~/.local/bin/set-external-monitor-backlight.sh - notify</command>
       </action>
     </keybind>
     <keybind key="W-A-S-Up">
       <action name="Execute">
-        <command>~/.local/bin/mon-brightness.sh +</command>
+        <command>~/.local/bin/set-internal-monitor-backlight.sh + notify</command>
       </action>
     </keybind>
     <keybind key="W-A-S-Down">
       <action name="Execute">
-        <command>~/.local/bin/mon-brightness.sh -</command>
+        <command>~/.local/bin/set-internal-monitor-backlight.sh - notify</command>
       </action>
     </keybind>
     <keybind key="W-S-c">
@@ -440,8 +440,7 @@
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <!--<command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>-->
-        <command>pamix -t</command>
+        <command>pamixer -t</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMicMute">
