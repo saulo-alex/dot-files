@@ -1,0 +1,7 @@
+# minute hour day-of-month month day-of-week
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# mudar o tema de claro para escuro às 18h de todos os dias
+0 18 * * * /home/saulo/.local/bin/set-desktop-theme.sh
+# altera wallpaper a cada 30 minutos de todos os dias (na primeira é adiada)
+*/30 * * * * sleep 1800 && /home/saulo/.local/bin/set-desktop-theme.sh
