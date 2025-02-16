@@ -382,6 +382,11 @@
         <command>thunar</command>
       </action>
     </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+          <command>~/.local/bin/set-monitor.sh</command>
+      </action>
+    </keybind>
     <keybind key="W-C-S-Up">
       <action name="Execute">
         <command>~/.local/bin/extmon-brightness.sh +</command>
@@ -419,23 +424,24 @@
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
+        <command>pamixer --set-limit 150 --allow-boost -i 5</command>
       </action>
       <action name="Execute">
-        <command>notify-send "Aumentando"</command>
+        <command>sh -c 'notify-send -i /usr/share/icons/Humanity/apps/24/gnome-volume-control.svg -u low -t 2000 -e -r 42 "Aumentando para $(pamixer --get-volume)%"'</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
+        <command>pamixer --set-limit 150 --allow-boost -d 5</command>
       </action>
       <action name="Execute">
-        <command>notify-send "Diminuindo"</command>
+        <command>sh -c 'notify-send -i /usr/share/icons/Humanity/apps/24/gnome-volume-control.svg -u low -t 2000 -e -r 42 "Diminuindo para $(pamixer --get-volume)%"'</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
+        <!--<command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>-->
+        <command>pamix -t</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMicMute">

@@ -1,6 +1,7 @@
-~/.screenlayout/mode-only-external.sh &
-hsetroot -solid "#07000d" &
-~/.fehbg &
+~/.screenlayout/mode-dual.sh &
+# hsetroot -solid "#07000d" &
+(sleep 2 && ~/.local/bin/set_desktop_theme.sh) &
+# ~/.fehbg &
 picom &
 tint2 &
 (sleep 2 && pa-applet) &

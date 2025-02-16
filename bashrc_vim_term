@@ -1,0 +1,13 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+#[[ $- != *i* ]] && return
+
+PS1='\W \$ '
+
+#source /opt/asdf-vm/asdf.sh
+
+#PATH="$PATH:/opt/lampp/bin/"
+#export PATH
