@@ -2,6 +2,8 @@
 
 hour=$(date +'%H' | bc)
 
+pkill xfsettingsd && xfsettingsd --daemon
+
 if [[ "$hour" -ge 5 && "$hour" -lt 18 ]]; then
     gsettings set org.gnome.desktop.interface gtk-theme Greybird
     cat ~/.gtk3-light > ~/.config/gtk-3.0/settings.ini
