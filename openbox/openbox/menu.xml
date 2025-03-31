@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+    <menu id="root-menu" label="OpenBox 3">
+        <menu id="1" label="Development">
+            <item label="bpython"> <action name="Execute">
+                <execute>xterm -e bpython</execute>
+            </action> </item>
+            <item label="CMake"> <action name="Execute">
+                <execute>cmake-gui</execute>
+            </action> </item>
+            <item label="FreePascal"> <action name="Execute">
+                <execute>xterm -e fp</execute>
+            </action> </item>
+            <item label="GDB"> <action name="Execute">
+                <execute>xterm -e gdb</execute>
+            </action> </item>
+            <item label="GitHub Desktop"> <action name="Execute">
+                <execute>github-desktop</execute>
+            </action> </item>
+            <item label="GTK Demo"> <action name="Execute">
+                <execute>gtk4-demo</execute>
+            </action> </item>
+            <item label="Icon Browser"> <action name="Execute">
+                <execute>gtk4-icon-browser</execute>
+            </action> </item>
+            <item label="ipython"> <action name="Execute">
+                <execute>xterm -e ipython</execute>
+            </action> </item>
+            <item label="Lazarus"> <action name="Execute">
+                <execute>lazarus</execute>
+            </action> </item>
+            <item label="Lazarus"> <action name="Execute">
+                <execute>startlazarus</execute>
+            </action> </item>
+            <item label="Node Editor"> <action name="Execute">
+                <execute>gtk4-node-editor</execute>
+            </action> </item>
+            <item label="Print Editor"> <action name="Execute">
+                <execute>gtk4-print-editor</execute>
+            </action> </item>
+            <item label="Qt Assistant (Qt 5)"> <action name="Execute">
+                <execute>assistant</execute>
+            </action> </item>
+            <item label="Qt Designer (Qt 5)"> <action name="Execute">
+                <execute>designer</execute>
+            </action> </item>
+            <item label="Qt Linguist (Qt 5)"> <action name="Execute">
+                <execute>linguist</execute>
+            </action> </item>
+            <item label="Qt QDBusViewer (Qt 5)"> <action name="Execute">
+                <execute>qdbusviewer</execute>
+            </action> </item>
+            <item label="Visual Studio Code"> <action name="Execute">
+                <execute>code</execute>
+            </action> </item>
+            <item label="Widget Factory"> <action name="Execute">
+                <execute>gtk4-widget-factory</execute>
+            </action> </item>
+        </menu>
+        <menu id="2" label="Editors">
+            <item label="GVim"> <action name="Execute">
+                <execute>gvim</execute>
+            </action> </item>
+            <item label="Mousepad"> <action name="Execute">
+                <execute>mousepad</execute>
+            </action> </item>
+            <item label="Vi"> <action name="Execute">
+                <execute>xterm -e vi</execute>
+            </action> </item>
+            <item label="Vim"> <action name="Execute">
+                <execute>xterm -e vim</execute>
+            </action> </item>
+        </menu>
+        <menu id="8" label="Education">
+            <item label="Anki"> <action name="Execute">
+                <execute>anki</execute>
+            </action> </item>
+        </menu>
+        <menu id="18" label="Games">
+            <menu id="10" label="Arcade">
+                <item label="SuperTux 2"> <action name="Execute">
+                    <execute>supertux2</execute>
+                </action> </item>
+            </menu>
+            <menu id="12" label="Card">
+                <item label="PySol Fan Club Edition"> <action name="Execute">
+                    <execute>pysol</execute>
+                </action> </item>
+            </menu>
+            <menu id="15" label="Sports">
+                <item label="Ski"> <action name="Execute">
+                    <execute>xterm -e ski</execute>
+                </action> </item>
+            </menu>
+            <item label="RetroArch"> <action name="Execute">
+                <execute>retroarch</execute>
+            </action> </item>
+        </menu>
+        <menu id="6" label="Graphics">
+            <item label="Color Picker"> <action name="Execute">
+                <execute>gcolor3</execute>
+            </action> </item>
+            <item label="ColorGrab"> <action name="Execute">
+                <execute>colorgrab</execute>
+            </action> </item>
+            <item label="Document Viewer"> <action name="Execute">
+                <execute>xreader</execute>
+            </action> </item>
+            <item label="FontForge"> <action name="Execute">
+                <execute>fontforge</execute>
+            </action> </item>
+            <item label="GNU Image Manipulation Program"> <action name="Execute">
+                <execute>gimp-2.10</execute>
+            </action> </item>
+            <item label="Inkscape"> <action name="Execute">
+                <execute>inkscape</execute>
+            </action> </item>
+            <item label="KolourPaint"> <action name="Execute">
+                <execute>kolourpaint</execute>
+            </action> </item>
+            <item label="Ristretto Image Viewer"> <action name="Execute">
+                <execute>ristretto</execute>
+            </action> </item>
+            <item label="XColor"> <action name="Execute">
+                <execute>xcolor -s</execute>
+            </action> </item>
+            <item label="XColor"> <action name="Execute">
+                <execute>xcolor -s -P 127</execute>
+            </action> </item>
+        </menu>
+        <menu id="7" label="Multimedia">
+            <item label="ALSA mixer"> <action name="Execute">
+                <execute>xterm -e alsamixer</execute>
+            </action> </item>
+            <item label="Avidemux"> <action name="Execute">
+                <execute>avidemux3_qt5</execute>
+            </action> </item>
+            <item label="Guvcview"> <action name="Execute">
+                <execute>guvcview</execute>
+            </action> </item>
+            <item label="HandBrake"> <action name="Execute">
+                <execute>ghb</execute>
+            </action> </item>
+            <item label="mpv Media Player"> <action name="Execute">
+                <execute>mpv --player-operation-mode=pseudo-gui</execute>
+            </action> </item>
+            <item label="MystiQ Video Converter"> <action name="Execute">
+                <execute>mystiq</execute>
+            </action> </item>
+            <item label="Parole Media Player"> <action name="Execute">
+                <execute>parole</execute>
+            </action> </item>
+            <item label="Qt V4L2 test Utility"> <action name="Execute">
+                <execute>qv4l2</execute>
+            </action> </item>
+            <item label="Qt V4L2 video capture utility"> <action name="Execute">
+                <execute>qvidcap</execute>
+            </action> </item>
+            <item label="Radio"> <action name="Execute">
+                <execute>xterm -e radio</execute>
+            </action> </item>
+            <item label="Spotify"> <action name="Execute">
+                <execute>spotify</execute>
+            </action> </item>
+            <item label="VLC media player"> <action name="Execute">
+                <execute>vlc</execute>
+            </action> </item>
+            <item label="Volume Control"> <action name="Execute">
+                <execute>pavucontrol</execute>
+            </action> </item>
+            <item label="Volume Icon"> <action name="Execute">
+                <execute>volumeicon</execute>
+            </action> </item>
+            <item label="XawTV"> <action name="Execute">
+                <execute>xawtv</execute>
+            </action> </item>
+            <item label="Xfburn"> <action name="Execute">
+                <execute>xfburn</execute>
+            </action> </item>
+        </menu>
+        <menu id="5" label="Network">
+            <item label="Avahi SSH Server Browser"> <action name="Execute">
+                <execute>bssh</execute>
+            </action> </item>
+            <item label="Avahi VNC Server Browser"> <action name="Execute">
+                <execute>bvnc</execute>
+            </action> </item>
+            <item label="Dropbox"> <action name="Execute">
+                <execute>dropbox</execute>
+            </action> </item>
+            <item label="FTP"> <action name="Execute">
+                <execute>xterm -e ftp</execute>
+            </action> </item>
+            <item label="Google Chrome"> <action name="Execute">
+                <execute>google-chrome-stable</execute>
+            </action> </item>
+            <item label="HexChat"> <action name="Execute">
+                <execute>hexchat</execute>
+            </action> </item>
+            <item label="Links"> <action name="Execute">
+                <execute>xterm -e links</execute>
+            </action> </item>
+            <item label="Links"> <action name="Execute">
+                <execute>xlinks -g</execute>
+            </action> </item>
+            <item label="Lynx"> <action name="Execute">
+                <execute>xterm -e lynx</execute>
+            </action> </item>
+            <item label="Mail Reader"> <action name="Execute">
+                <execute>exo-open --launch MailReader</execute>
+            </action> </item>
+            <item label="Microsoft Edge"> <action name="Execute">
+                <execute>microsoft-edge-stable</execute>
+            </action> </item>
+            <item label="qBittorrent"> <action name="Execute">
+                <execute>qbittorrent</execute>
+            </action> </item>
+            <item label="Talk"> <action name="Execute">
+                <execute>xterm -e talk</execute>
+            </action> </item>
+            <item label="Telnet"> <action name="Execute">
+                <execute>xterm -e telnet</execute>
+            </action> </item>
+            <item label="Thunderbird"> <action name="Execute">
+                <execute>thunderbird</execute>
+            </action> </item>
+            <item label="Web Browser"> <action name="Execute">
+                <execute>exo-open --launch WebBrowser</execute>
+            </action> </item>
+            <item label="Wireshark"> <action name="Execute">
+                <execute>wireshark</execute>
+            </action> </item>
+        </menu>
+        <menu id="3" label="Office">
+            <item label="Dictionary"> <action name="Execute">
+                <execute>xfce4-dict</execute>
+            </action> </item>
+            <item label="Foliate"> <action name="Execute">
+                <execute>foliate</execute>
+            </action> </item>
+            <item label="LibreOffice Impress"> <action name="Execute">
+                <execute>libreoffice</execute>
+            </action> </item>
+        </menu>
+        <menu id="4" label="Science">
+            <item label="Marble"> <action name="Execute">
+                <execute>marble-qt</execute>
+            </action> </item>
+            <item label="Marble Maps"> <action name="Execute">
+                <execute>marble-maps</execute>
+            </action> </item>
+        </menu>
+        <menu id="19" label="Shells">
+            <item label="GIT"> <action name="Execute">
+                <execute>xterm -e git</execute>
+            </action> </item>
+            <item label="kitty"> <action name="Execute">
+                <execute>kitty</execute>
+            </action> </item>
+            <item label="MC"> <action name="Execute">
+                <execute>xterm -e mc</execute>
+            </action> </item>
+            <item label="Oracle VirtualBox"> <action name="Execute">
+                <execute>VirtualBox</execute>
+            </action> </item>
+            <item label="Thunar File Manager"> <action name="Execute">
+                <execute>thunar</execute>
+            </action> </item>
+            <item label="UXTerm"> <action name="Execute">
+                <execute>uxterm</execute>
+            </action> </item>
+            <item label="Xfce Terminal"> <action name="Execute">
+                <execute>xfce4-terminal</execute>
+            </action> </item>
+            <item label="Xterm"> <action name="Execute">
+                <execute>xterm</execute>
+            </action> </item>
+        </menu>
+        <menu id="37" label="System">
+            <menu id="36" label="Settings">
+                <menu id="21" label="GNOME">
+                    <item label="About Me"> <action name="Execute">
+                        <execute>mugshot</execute>
+                    </action> </item>
+                    <item label="Advanced Network Configuration"> <action name="Execute">
+                        <execute>nm-connection-editor</execute>
+                    </action> </item>
+                </menu>
+                <menu id="35" label="Xfce">
+                    <item label="Settings Manager"> <action name="Execute">
+                        <execute>xfce4-settings-manager</execute>
+                    </action> </item>
+                </menu>
+                <item label="Accessibility"> <action name="Execute">
+                    <execute>xfce4-accessibility-settings</execute>
+                </action> </item>
+                <item label="Appearance"> <action name="Execute">
+                    <execute>xfce4-appearance-settings</execute>
+                </action> </item>
+                <item label="ARandR"> <action name="Execute">
+                    <execute>arandr</execute>
+                </action> </item>
+                <item label="Clipboard Manager Settings"> <action name="Execute">
+                    <execute>xfce4-clipman-settings</execute>
+                </action> </item>
+                <item label="Color Profiles"> <action name="Execute">
+                    <execute>xfce4-color-settings</execute>
+                </action> </item>
+                <item label="Customize Look and Feel"> <action name="Execute">
+                    <execute>lxappearance</execute>
+                </action> </item>
+                <item label="Default Applications"> <action name="Execute">
+                    <execute>xfce4-mime-settings</execute>
+                </action> </item>
+                <item label="Desktop"> <action name="Execute">
+                    <execute>xfdesktop-settings</execute>
+                </action> </item>
+                <item label="Display"> <action name="Execute">
+                    <execute>xfce4-display-settings</execute>
+                </action> </item>
+                <item label="File Manager Settings"> <action name="Execute">
+                    <execute>thunar-settings</execute>
+                </action> </item>
+                <item label="Keyboard"> <action name="Execute">
+                    <execute>xfce4-keyboard-settings</execute>
+                </action> </item>
+                <item label="Kvantum Manager"> <action name="Execute">
+                    <execute>kvantummanager</execute>
+                </action> </item>
+                <item label="Monitor Settings"> <action name="Execute">
+                    <execute>lxrandr</execute>
+                </action> </item>
+                <item label="Mouse and Touchpad"> <action name="Execute">
+                    <execute>xfce4-mouse-settings</execute>
+                </action> </item>
+                <item label="Notifications"> <action name="Execute">
+                    <execute>xfce4-notifyd-config</execute>
+                </action> </item>
+                <item label="NVIDIA X Server Settings"> <action name="Execute">
+                    <execute>nvidia-settings</execute>
+                </action> </item>
+                <item label="Openbox Configuration Manager"> <action name="Execute">
+                    <execute>obconf</execute>
+                </action> </item>
+                <item label="Panel"> <action name="Execute">
+                    <execute>xfce4-panel --preferences</execute>
+                </action> </item>
+                <item label="Passwords and Keys"> <action name="Execute">
+                    <execute>seahorse</execute>
+                </action> </item>
+                <item label="Power Manager"> <action name="Execute">
+                    <execute>xfce4-power-manager-settings</execute>
+                </action> </item>
+                <item label="Qt5 Settings"> <action name="Execute">
+                    <execute>qt5ct</execute>
+                </action> </item>
+                <item label="Qt6 Settings"> <action name="Execute">
+                    <execute>qt6ct</execute>
+                </action> </item>
+                <item label="Removable Drives and Media"> <action name="Execute">
+                    <execute>thunar-volman-settings</execute>
+                </action> </item>
+                <item label="Session and Startup"> <action name="Execute">
+                    <execute>xfce4-session-settings</execute>
+                </action> </item>
+                <item label="Settings Editor"> <action name="Execute">
+                    <execute>xfce4-settings-editor</execute>
+                </action> </item>
+                <item label="Text Editor Settings"> <action name="Execute">
+                    <execute>mousepad --preferences</execute>
+                </action> </item>
+                <item label="Tint2 Settings"> <action name="Execute">
+                    <execute>tint2conf</execute>
+                </action> </item>
+                <item label="Window Manager"> <action name="Execute">
+                    <execute>xfwm4-settings</execute>
+                </action> </item>
+                <item label="Window Manager Tweaks"> <action name="Execute">
+                    <execute>xfwm4-tweaks-settings</execute>
+                </action> </item>
+                <item label="Workspaces"> <action name="Execute">
+                    <execute>xfwm4-workspace-settings</execute>
+                </action> </item>
+                <item label="Xfce Screensaver"> <action name="Execute">
+                    <execute>xfce4-screensaver-preferences</execute>
+                </action> </item>
+                <item label="Xfce Terminal Settings"> <action name="Execute">
+                    <execute>xfce4-terminal --preferences</execute>
+                </action> </item>
+            </menu>
+            <item label="Avahi Zeroconf Browser"> <action name="Execute">
+                <execute>avahi-discover</execute>
+            </action> </item>
+            <item label="Hardware Locality lstopo"> <action name="Execute">
+                <execute>lstopo</execute>
+            </action> </item>
+            <item label="Htop"> <action name="Execute">
+                <execute>xterm -e htop</execute>
+            </action> </item>
+            <item label="Log Out"> <action name="Execute">
+                <execute>xfce4-session-logout</execute>
+            </action> </item>
+            <item label="LSHW"> <action name="Execute">
+                <execute>gtk-lshw</execute>
+            </action> </item>
+            <item label="OpenJDK Java 23 Console"> <action name="Execute">
+                <execute>jconsole</execute>
+            </action> </item>
+            <item label="OpenJDK Java 23 Shell"> <action name="Execute">
+                <execute>xterm -e jshell</execute>
+            </action> </item>
+            <item label="Sensor Viewer"> <action name="Execute">
+                <execute>xfce4-sensors</execute>
+            </action> </item>
+            <item label="Task Manager"> <action name="Execute">
+                <execute>xfce4-taskmanager</execute>
+            </action> </item>
+            <item label="Tint2"> <action name="Execute">
+                <execute>tint2</execute>
+            </action> </item>
+        </menu>
+        <menu id="38" label="Utilities">
+            <item label="About Xfce"> <action name="Execute">
+                <execute>xfce4-about</execute>
+            </action> </item>
+            <item label="Application Finder"> <action name="Execute">
+                <execute>xfce4-appfinder</execute>
+            </action> </item>
+            <item label="Character Map"> <action name="Execute">
+                <execute>gucharmap</execute>
+            </action> </item>
+            <item label="Clipboard Manager"> <action name="Execute">
+                <execute>xfce4-clipman</execute>
+            </action> </item>
+            <item label="File Manager"> <action name="Execute">
+                <execute>exo-open --launch FileManager</execute>
+            </action> </item>
+            <item label="Galculator"> <action name="Execute">
+                <execute>galculator</execute>
+            </action> </item>
+            <item label="Notes"> <action name="Execute">
+                <execute>xfce4-notes</execute>
+            </action> </item>
+            <item label="Picom"> <action name="Execute">
+                <execute>picom</execute>
+            </action> </item>
+            <item label="Redshift"> <action name="Execute">
+                <execute>redshift-gtk</execute>
+            </action> </item>
+            <item label="Run Program..."> <action name="Execute">
+                <execute>xfce4-appfinder --collapsed</execute>
+            </action> </item>
+            <item label="Screenshot"> <action name="Execute">
+                <execute>xfce4-screenshooter</execute>
+            </action> </item>
+            <item label="Terminal Emulator"> <action name="Execute">
+                <execute>exo-open --launch TerminalEmulator</execute>
+            </action> </item>
+            <item label="Winetricks"> <action name="Execute">
+                <execute>winetricks --gui</execute>
+            </action> </item>
+            <item label="Xarchiver"> <action name="Execute">
+                <execute>xarchiver</execute>
+            </action> </item>
+        </menu>
+        <separator/>
+        <menu id="40" label="OpenBox">
+            <menu id="client-list-menu"/>
+            <item label="Reconfigure"> <action name="Reconfigure"/> </item>
+            <separator/>
+            <item label="Exit"> <action name="Exit"/> </item>
+        </menu>
+    </menu>
+</openbox_menu>

@@ -1,0 +1,9 @@
+~/.local/bin/set-desktop-theme.sh &
+~/.local/bin/set-monitor.sh last &
+# hsetroot -solid "#07000d" &
+(sleep 2 && ~/.local/bin/set-desktop-wallpaper.sh) &
+# ~/.fehbg &
+picom &
+tint2 &
+(sleep 1 && pa-applet) &
+(sleep 1 && dropbox) &
