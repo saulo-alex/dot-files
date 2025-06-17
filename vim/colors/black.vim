@@ -45,8 +45,8 @@ exe 'hi LineNr guifg='s:fg5' guibg='s:bg2
 exe 'hi CursorLineNr guifg='s:fg' guibg='s:bg
 exe 'hi VertSplit guifg='s:fg3' guibg='s:bg3
 exe 'hi MatchParen guifg='s:warning2'  gui=underline'
-exe 'hi StatusLine gui=bold cterm=bold guifg='s:bg' guibg='s:fg3
-exe 'hi StatusLineNC guifg='s:bg' guibg='s:bg4' gui=bold'
+exe $"hi StatusLine gui=bold cterm=bold guifg=#000000 guibg=#00FFFF"
+exe $"hi StatusLineNC gui=bold cterm=bold guifg=#000000 guibg=#555555"
 exe 'hi Pmenu guifg='s:fg' guibg='s:bg2
 exe 'hi PmenuSel  guibg='s:bg3
 exe 'hi IncSearch guifg='s:bg' guibg='s:keyword

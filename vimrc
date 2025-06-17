@@ -10,9 +10,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'mattn/emmet-vim'
     Plug 'preservim/tagbar'
     Plug 'alvan/vim-closetag'
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb'
+    "Plug 'tpope/vim-surround'
+    "Plug 'tpope/vim-fugitive'
+    "Plug 'tpope/vim-rhubarb'
     "Plug 'pulkomandy/c.vim'
     "Plug 'vim-ruby/vim-ruby'
     " Colorizer breaks when set notermguicolors, using vim-css-color is better
@@ -149,8 +149,9 @@ function! ApplyTheme()
     let s:hour_now = strftime("%H")
     let s:minute_now = strftime("%M")
 
-    set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m\ %=%{FugitiveStatusline()}\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
+    "set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m\ %=%{FugitiveStatusline()}\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
 
+    set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m%=\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
     " ---- Dia: entre 7h as 17h15
     if s:hour_now >= 7 && s:hour_now < 17 || (s:hour_now == 17 && s:minute_now <= 15)
         if has('gui_running')
@@ -185,12 +186,6 @@ function! SetupLangServers()
                 \           'filetype': ['c', 'cpp'],
                 \           'path': '/usr/bin/clangd',
                 \           'args': ['--background-index']
-                \      },
-                \      {
-                \           'name': 'bashlang',
-                \           'filetype': ['sh', 'bash'],
-                \           'path': '/usr/bin/bash-language-server',
-                \           'args': ['start']
                 \      },
                 \      {
                 \           'name': 'jslang',
@@ -344,7 +339,7 @@ set ttymouse=sgr
 set incsearch
 set hlsearch
 
-set path+=**
+" set path+=**
 
 if !has("gui_running")
     " Configuração de formas do cursor no terminal
@@ -370,6 +365,9 @@ let g:user_emmet_settings = {
 \       'charset': "utf-8",
 \   },
 \   'html': {
+\       'snippets': {
+\           '!!': "<!DOCTYPE html>\n<html lang=\"pt-br\">\n<head>\n\t<meta charset=\"utf-8\">\n\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n\t<title>|</title>\n</head>\n<body>\n\n|</body>\n</html>"
+\       },
 \       'filters': 'html',
 \       'default_attributes': {
 \           'meta': [{'name': ''}, {'content': ''}],
@@ -405,3 +403,9 @@ autocmd! ColorScheme * let m = expand("<amatch>") |
 call SetupLangServers()
 
 set completeopt-=preview
+
+" Compreenda as features modernas do Perl
+let g:perl_extended_vars = 1       " Suporte a variáveis complexas
+let g:perl_include_pod = 1         " Destaca POD (documentação)
+let g:perl_want_scope_in_variables = 1  " Escopo de variáveis
+let g:perl_sub_signatures = 1      " Assinaturas de subrotinas

@@ -1,4 +1,3 @@
 setlocal wrap
 syn region cssPseudoClassFn contained matchgroup=cssFunctionName start="\<\(where\|has|\not\)(" end=")" contains=cssStringQ,cssStringQQ,cssTagName,cssAttributeSelector,cssClassName,cssIdentifier
-syn keyword cssProp contained inset row-gap column-gap place-items place-content place-self paint-order rotate scale translate margin-inline margin-block padding-inline padding-block
-
+syn keyword cssProp contained inset row-gap column-gap place-items place-content place-self paint-order rotate scale translate margin-inline margin-block block-size inline-size min-block-size max-block-size min-inline-size max-inline-size inset inset-block-start inset-block-end inset-inline-start inset-inline-end border-block border-inline margin-block-start margin-block-end margin-inline-start margin-inline-end padding-inline padding-block padding-block-start padding-block-end padding-inline-start padding-inline-end accent-color aspect-ratio backdrop-filter container-type container-name scroll-timeline view-timeline animation-timeline color-scheme forced-color-adjust scrollbar-gutter text-wrap
