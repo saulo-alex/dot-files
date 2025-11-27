@@ -57,7 +57,11 @@ xterm.termName: xterm-256color
 xterm.ttyModes: erase ^?
 !xterm.vt100.background: #000000
 !xterm.vt100.foreground: #b2b2b2
-xterm.vt100.faceName: IBM Plex Mono:style=Medium:size=9:antialias=true
+!xterm.vt100.faceName: Hack:style=Regular:size=9:antialias=true
+!xterm.vt100.faceName: IBM Plex Mono:style=Medium:size=9:antialias=true
+!xterm.vt100.faceName: JetBrains Mono:style=Medium:size=9:antialias=true
+!xterm.vt100.faceName: Adwaita Mono:style=Regular:size=9.5:antialias=true
+xterm.vt100.faceName: Cascadia Code:style=Regular:size=9.5:antialias=true
 xterm.vt100.allowBoldFonts: false
 xterm.vt100.alternateScroll: true
 xterm.vt100.multiScroll: true
@@ -122,29 +126,29 @@ xterm.vt100.cursorBlink: true
 !xterm.vt100.color15: #ffffff
 
 !! Theme based on xterm with high contrast
-xterm.vt100.foreground:   #ffffff
-xterm.vt100.background:   #000000
+xterm.vt100.foreground:   #d9d9d9
+xterm.vt100.background:   #020202
 ! black
-xterm.vt100.color0:  #777777
-xterm.vt100.color8:  #000000
+xterm.vt100.color0:  #000000
+xterm.vt100.color8:  #888888
 ! red
-xterm.vt100.color1:  #ff0000 
+xterm.vt100.color1:  #ff2222 
 xterm.vt100.color9:  #ff7777 
 ! green
-xterm.vt100.color2:  #00ff00 
-xterm.vt100.color10: #77ff77 
+xterm.vt100.color2:  #22ff22 
+xterm.vt100.color10: #88ff88 
 ! yellow
 xterm.vt100.color3:  #ffff00
-xterm.vt100.color11: #ffff77
+xterm.vt100.color11: #cccc22
 ! blue
-xterm.vt100.color4:  #0000ff
-xterm.vt100.color12: #7777ff
+xterm.vt100.color4:  #2222ee
+xterm.vt100.color12: #8888ee
 ! magenta
 xterm.vt100.color5:  #ff00ff
-xterm.vt100.color13: #ff77ff
+xterm.vt100.color13: #dd77dd
 ! cyan
 xterm.vt100.color6:  #00ffff
-xterm.vt100.color14: #77ffff
+xterm.vt100.color14: #99ffff
 ! white
-xterm.vt100.color7:  #b2b2b2 
+xterm.vt100.color7:  #a0a0a0 
 xterm.vt100.color15: #ffffff 

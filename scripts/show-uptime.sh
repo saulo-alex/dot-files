@@ -1,8 +1,24 @@
 #!/usr/bin/env bash
 
-timestamp=$(cat /proc/uptime | cut -d' ' -f1)
+declare output
+declare uptimestatus
+declare timestamp
+declare -a options
 
-hours=$(bc <<< "$timestamp/3600")
-minutes=$(bc <<< "scale=2;m=60*($timestamp/3600-$hours);scale=0;m/1")
+options=("${@:1}")
+for option in "${options[@]}"; do
+    case "$option" in
+        "--full")
+            output="Uptime: "
+            ;;
+        "--simple")
+            output=""
+    esac
+done
 
-echo "Uptime: ${hours}h ${minutes}m"
+timestamp=$(awk -F. '{print $1}' /proc/uptime)
+# Para segundos adicione $((timestamp % 60)))
+uptimestatus="$((timestamp / 3600))h $(((timestamp % 3600) / 60))m"
+output="${output}${uptimestatus}"
+
+echo "$output"
