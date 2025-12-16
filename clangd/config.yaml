@@ -1,0 +1,20 @@
+CompileFlags:
+  Add: [-Wall, -Wextra, -Wpedantic]
+
+---
+
+# C++
+If:
+  PathMatch: [.*\.cc, .*\.cpp, .*\.ixx, .*\.hpp]
+CompileFlags:
+  Add: [-std=c++23]
+  Compiler: clang++
+---
+
+# C
+If:
+  PathMatch: [.*\.c, .*\.h]
+CompileFlags:
+  Add: [-lm, -std=c23]
+  Compiler: clang
+
