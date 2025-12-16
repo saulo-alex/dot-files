@@ -11,7 +11,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/tagbar'
     Plug 'alvan/vim-closetag'
     "Plug 'tpope/vim-surround'
-    "Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive'
     "Plug 'tpope/vim-rhubarb'
     "Plug 'pulkomandy/c.vim'
     "Plug 'vim-ruby/vim-ruby'
@@ -149,9 +149,9 @@ function! ApplyTheme()
     let s:hour_now = strftime("%H")
     let s:minute_now = strftime("%M")
 
-    "set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m\ %=%{FugitiveStatusline()}\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
+    set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m\ %=%{FugitiveStatusline()}\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
 
-    set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m%=\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
+    "set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m%=\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
     " ---- Dia: entre 7h as 17h15
     if s:hour_now >= 7 && s:hour_now < 17 || (s:hour_now == 17 && s:minute_now <= 15)
         if has('gui_running')
@@ -241,6 +241,7 @@ command! DeleteEmptyBuffers call DeleteEmptyBuffers()
 " -----------------------------------------------
 map <C-s> :write!<CR>
 imap <C-s> <ESC>:write!<CR>a
+map <F3> :make<CR>
 map <F5> :term<CR>
 map <F6> :ls<CR>
 map <leader>r :source %<CR>
@@ -251,7 +252,11 @@ map <leader>a :b #<CR>
 map <leader>B :bprevious!<CR>
 map <leader>D :bdelete!<CR>
 map <leader>d :DeleteEmptyBuffers<CR>
-map <F8> :Lexplore 10<CR>
+map <leader>eo :copen<CR>
+map <leader>en :cnext<CR>
+map <leader>ep :cprevious<CR>
+map <leader>ec :cclose<CR>
+map <F8> :Lexplore 12<CR>
 nmap <F9> :TagbarToggle<CR>
 " no Windows o CTRL-] para navegar entre tags não funciona!
 if exists("$WINDIR")
@@ -297,7 +302,7 @@ map <silent><leader>m :let @/ = ''<CR>
 "  do espaço para um caractere normal ASCII
 set listchars=tab:>-,eol:$,space:.
 set ambiwidth="double"
-set redrawtime=2500
+set redrawtime=1000
 " não mova o cursor para o início da linha em determinados comandos como :bn, H, L, :bprev etc.
 set nostartofline
 set shell=/usr/bin/bash\ --init-file\ ~/.bashrc_vim_term
@@ -325,7 +330,7 @@ set wildmenu
 set wildmode=full
 "set colorcolumn=100
 "set cmdheight=2
-"set updatetime=100
+set updatetime=100
 set nobackup
 set nowritebackup
 set splitright
@@ -334,6 +339,7 @@ set splitbelow
 set mouse=a
 " habilita o mouse dentro do kitty
 set ttymouse=sgr
+set ttyfast
 "set autoread
 "set scrolloff=8
 set incsearch
@@ -353,7 +359,7 @@ endif
 
 " Sintaxe do pascal (outra útil pascal_delphi)
 let pascal_fpc=1
-let pascal_delphi=1
+let pascal_delphi=0
 
 " ------------------ Configuração do Emmet --------------------
 let g:user_emmet_install_global = 1
@@ -409,3 +415,9 @@ let g:perl_extended_vars = 1       " Suporte a variáveis complexas
 let g:perl_include_pod = 1         " Destaca POD (documentação)
 let g:perl_want_scope_in_variables = 1  " Escopo de variáveis
 let g:perl_sub_signatures = 1      " Assinaturas de subrotinas
+
+" C23 por padrão
+let g:c_no_curly_error = 1
+let g:c_no_bracket_error = 1
+let g:c_syntax_for_h = 1      " Trata arquivos .h sempre como C, não C++
+let g:is_posix = 1
