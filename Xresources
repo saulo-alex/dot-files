@@ -103,13 +103,20 @@ xterm_dark.vt100.faceSize3: 10
 xterm_dark.vt100.faceSize4: 12
 xterm_dark.vt100.faceSize5: 14
 xterm_dark.vt100.faceSize6: 16
+! atalhos
 xterm_dark.vt100.translations: #override \
     Ctrl Shift <Key>Up: scroll-back(1) \n\
     Ctrl Shift <Key>Down: scroll-forw(1) \n\
     Ctrl Shift <Key>Home: scroll-to(begin) \n\
     Ctrl Shift <Key>End: scroll-to(end) \n\
     Ctrl Shift <Key>+: larger-vt-font() \n\
-    Ctrl Shift <Key>-: smaller-vt-font()
+    Ctrl Shift <Key>-: smaller-vt-font() \n\
+    Ctrl <Btn1Down>: ignore() \n\
+    Ctrl <Btn2Down>: ignore() \n\
+    Ctrl <Btn3Down>: ignore() \n\
+    Alt <Btn1Down>: popup-menu(mainMenu) \n\
+    Alt <Btn2Down>: popup-menu(vtMenu) \n\
+    Alt <Btn3Down>: popup-menu(fontMenu)
 xterm_dark.vt100.cursorColor: .XtDefaultForeground
 xterm_dark.vt100.dynamicColors: true
 xterm_dark.vt100.highlightColorMode: true
@@ -182,6 +189,7 @@ xterm_light.vt100.faceSize3: 10
 xterm_light.vt100.faceSize4: 12
 xterm_light.vt100.faceSize5: 14
 xterm_light.vt100.faceSize6: 16
+! atalhos
 xterm_light.vt100.translations: #override \
     Ctrl Shift <Key>Up: scroll-back(1) \n\
     Ctrl Shift <Key>Down: scroll-forw(1) \n\
@@ -189,6 +197,12 @@ xterm_light.vt100.translations: #override \
     Ctrl Shift <Key>End: scroll-to(end) \n\
     Ctrl Shift <Key>+: larger-vt-font() \n\
     Ctrl Shift <Key>-: smaller-vt-font()
+    Ctrl <Btn1Down>: ignore() \n\
+    Ctrl <Btn2Down>: ignore() \n\
+    Ctrl <Btn3Down>: ignore() \n\
+    Alt <Btn1Down>: popup-menu(mainMenu) \n\
+    Alt <Btn2Down>: popup-menu(vtMenu) \n\
+    Alt <Btn3Down>: popup-menu(fontMenu)
 xterm_light.vt100.cursorColor: .XtDefaultForeground
 xterm_light.vt100.dynamicColors: true
 xterm_light.vt100.highlightColorMode: true
