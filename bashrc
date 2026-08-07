@@ -8,6 +8,15 @@
 # ---------------------
 # Funções utilitárias
 # ---------------------
+#
+
+reset_colorscheme_tmux() {
+    # reconfigura o prompt e outras coisinhas quando muda de tema (terminal claro ou escuro no tmux)
+    if [ -n "$TMUX" ]; then
+        eval $(tmux show-environment -s TERM_COLORSCHEME)
+        . ~/.bashrc
+    fi
+}
 
 show_last_status() {
     local laststatus=$(echo $?)
@@ -31,7 +40,7 @@ show_last_status() {
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias vimview='vim -c "set readonly | set nomodifiable"'
+alias rovim='vim -MR --clean '
 alias xpdf='xpdf -style Fusion -aa yes -aaVector yes'
 
 # ------------------------------------------------------------------------
@@ -114,13 +123,6 @@ alias xpdf='xpdf -style Fusion -aa yes -aaVector yes'
 # em aspas simples ou escapar o $ em aspas duplas
 #PS1='\[\e[96m\][\u@\h \w] $(show_last_status)\n\[\e[92m\]\$ \[\e[0m\]'
 # É importante que o \[  \] esteja fora da função, justificando abaixo...
-#now_hour=$(date +'%H' | bc)
-#if [[ $now_hour -ge 6 && $now_hour -lt 18 ]]; then
-    #PS1='\[\e[96m\][\u@\h \w] \[$(show_last_status)\]\n\[\e[37m\]\$ \[\e[0m\]'
-#else
-    #PS1='\[\e[96m\][\u@\h \w] \[$(show_last_status)\]\n\[\e[92m\]\$ \[\e[0m\]'
-#fi
-PS1='\[\e[96m\][\u@\h \w] \[$(show_last_status)\]\n\[\e[92m\]\$ \[\e[0m\]'
 
 # ---------------------------------
 # Variáveis, exportações e sources
@@ -132,7 +134,13 @@ export ZZPATH="/usr/bin/funcoeszz"  # script
 export ZZDIR=""    # pasta zz/
 source "$ZZPATH"
 
-PATH="$PATH:/opt/lampp/bin/:/home/saulo/.local/bin/"
+if [ "$TERM_COLORSCHEME" = "light" ]; then
+    PS1='\[\e[34m\][\u@\h \w] \[$(show_last_status)\]\n\[\e[32m\]\$ \[\e[0m\]'
+else
+    PS1='\[\e[96m\][\u@\h \w] \[$(show_last_status)\]\n\[\e[92m\]\$ \[\e[0m\]'
+fi
+
+PATH="$PATH:/opt/lampp/bin/:$HOME/.local/bin/:$HOME/.config/composer/vendor/bin"
 export PATH
 
 PATH="/home/saulo/.perl5/bin${PATH:+:${PATH}}"; export PATH;

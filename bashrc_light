@@ -1,0 +1,3 @@
+TERM_COLORSCHEME=light
+export TERM_COLORSCHEME
+. ~/.bashrc

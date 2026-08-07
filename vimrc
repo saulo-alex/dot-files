@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
     "Plug 'amadeus/vim-css'
     " LSP plugin (servidores das linguagens são à parte)
     Plug 'yegappan/lsp'
+    "Plug 'jiangmiao/auto-pairs'
+    "Plug 'github/copilot.vim'
 
     " Temas
     Plug 'yasukotelin/shirotelin'
@@ -153,15 +155,17 @@ function! ApplyTheme()
 
     "set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m%=\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
     " ---- Dia: entre 7h as 17h15
-    if s:hour_now >= 7 && s:hour_now < 17 || (s:hour_now == 17 && s:minute_now <= 15)
+    "if s:hour_now >= 7 && s:hour_now < 17 || (s:hour_now == 17 && s:minute_now <= 15)
+    if $TERM_COLORSCHEME == "light"
         if has('gui_running')
-            let g:colorscheme.name = 'eclipse'
+            let g:colorscheme.name = 'modus-operandi'
             let g:colorscheme.index = index(g:colorschemes, g:colorscheme.name)
             execute('colorscheme ' .. g:colorscheme.name)
             set background=light
         else
-            colorscheme black
-            set background=dark
+            set background=light
+            colorscheme shirotelin
+            hi Normal guibg=NONE
         endif
     else
         colorscheme black
@@ -173,6 +177,8 @@ function! ApplyTheme()
     endif
     "highlight ModeMsg term=bold ctermfg=white ctermbg=darkred
     "highlight Normal guibg=NONE ctermbg=NONE
+
+    hi MatchParen cterm=underline guifg=lightred guibg=NONE gui=underline
 endfunc
 
 function! SetupLangServers()
@@ -294,12 +300,18 @@ map <leader>Lgd :LspGotoDeclaration<CR>
 map <leader>LgD :LspGotoDefinition<CR>
 
 map <silent><leader>m :let @/ = ''<CR>
+"inoremap ( ()<Left>
+"inoremap [ []<Left>
+"inoremap { {}<Left>
+"inoremap ' ''<Left>
+"inoremap " ""<Left>
 
 " ----------------------------------------------
 "             ajustes de variáveis
 " ----------------------------------------------
 " busca melhorar a renderização de grifos longos do UTF-8, reservando o dobro
 "  do espaço para um caractere normal ASCII
+set history=512
 set listchars=tab:>-,eol:$,space:.
 set ambiwidth="double"
 set redrawtime=1000
@@ -309,7 +321,8 @@ set shell=/usr/bin/bash\ --init-file\ ~/.bashrc_vim_term
 set foldcolumn=1
 set numberwidth=3
 set number
-"set nowrap
+set wrap
+set textwidth=0
 set encoding=utf8
 set fileencoding=utf8
 if strlen(&filetype) == 0
@@ -340,7 +353,7 @@ set mouse=a
 " habilita o mouse dentro do kitty
 set ttymouse=sgr
 set ttyfast
-"set autoread
+set autoread
 "set scrolloff=8
 set incsearch
 set hlsearch
@@ -390,10 +403,10 @@ let g:netrw_sort_by = 'name'
 let g:netrw_sort_sequence = '\/$,\.html$,\.css$,\.js$,\.php\*\=$,\.pl\*\=$,\.pm$,\.md$,\.txt$,\.\(png\|jpeg\|jpg\|gif\|webp\)$,\.py$\*\=$,\.sh\*\=$,\.java$,\.pas$,\.c$,\.cpp$,\.h$,\.hpp$'
 
 " Desabilitar o highlight de match de parênteses e similares
-let g:loaded_matchparen=1
+" let g:loaded_matchparen=1
 
 " --------------- Configuração do Colorizer -----------------
-let g:colorizer_auto_filetype = 'sass,css,html'
+let g:colorizer_auto_filetype = 'sh,sass,css,html'
 let g:colorizer_skip_comments = 1
 
 call FindAllColorschemes()
@@ -421,3 +434,6 @@ let g:c_no_curly_error = 1
 let g:c_no_bracket_error = 1
 let g:c_syntax_for_h = 1      " Trata arquivos .h sempre como C, não C++
 let g:is_posix = 1
+
+" Inicia com Copilot desligado!
+" let g:copilot_enabled = 0
