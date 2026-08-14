@@ -61,15 +61,14 @@ xclock*brief: true
 xclock*foreground: white
 xclock*background: black
 
-! xterm
+! xterm: dark variation
 xterm_dark.termName: xterm-256color
 xterm_dark.ttyModes: erase ^?
 !xterm.vt100.background: #000000
 !xterm.vt100.foreground: #b2b2b2
 !xterm.vt100.faceName: Hack:style=Bold:antialias=true
-!xterm.vt100.faceName: Iosevka Term:style=Semibold:antialias=true
-!xterm.vt100.faceName: IBM Plex Mono:style=Medium:antialias=true
-xterm_dark.vt100.faceName: JetBrains Mono:style=Bold:antialias=true
+xterm.vt100.faceName: IBM Plex Mono:style=Medium:antialias=true
+!xterm_dark.vt100.faceName: JetBrains Mono:style=Medium:antialias=true
 !xterm.vt100.faceName: Noto Sans Mono:style=Medium:antialias=true
 !xterm.vt100.faceName: Adwaita Mono:style=Medium:antialias=true
 !xterm.vt100.faceName: Inconsolata:style=Medium:antialias=true
@@ -100,9 +99,9 @@ xterm_dark.vt100.bellIsUrgent: true
 xterm_dark.vt100.faceSize1: 8
 xterm_dark.vt100.faceSize2: 9
 xterm_dark.vt100.faceSize3: 10
-xterm_dark.vt100.faceSize4: 12
-xterm_dark.vt100.faceSize5: 14
-xterm_dark.vt100.faceSize6: 16
+xterm_dark.vt100.faceSize4: 16
+xterm_dark.vt100.faceSize5: 20
+xterm_dark.vt100.faceSize6: 24
 ! atalhos
 xterm_dark.vt100.translations: #override \
     Ctrl Shift <Key>Up: scroll-back(1) \n\
@@ -160,7 +159,8 @@ xterm_dark.vt100.color15: #ffffff
 ! *************************************
 xterm_light.termName: xterm-256color
 xterm_light.ttyModes: erase ^?
-xterm_light.vt100.faceName: JetBrains Mono:style=Regular:antialias=true
+!xterm_light.vt100.faceName: JetBrains Mono:style=Medium:antialias=true
+xterm_light.vt100.faceName: IBM Plex Mono:style=Regular:antialias=true
 xterm_light.vt100.faceSize: 8
 xterm_light.vt100.utf8: 1
 xterm_light.vt100.utf8Title: true
@@ -186,9 +186,9 @@ xterm_light.vt100.bellIsUrgent: true
 xterm_light.vt100.faceSize1: 8
 xterm_light.vt100.faceSize2: 9
 xterm_light.vt100.faceSize3: 10
-xterm_light.vt100.faceSize4: 12
-xterm_light.vt100.faceSize5: 14
-xterm_light.vt100.faceSize6: 16
+xterm_light.vt100.faceSize4: 16
+xterm_light.vt100.faceSize5: 20
+xterm_light.vt100.faceSize6: 24
 ! atalhos
 xterm_light.vt100.translations: #override \
     Ctrl Shift <Key>Up: scroll-back(1) \n\
@@ -196,7 +196,7 @@ xterm_light.vt100.translations: #override \
     Ctrl Shift <Key>Home: scroll-to(begin) \n\
     Ctrl Shift <Key>End: scroll-to(end) \n\
     Ctrl Shift <Key>+: larger-vt-font() \n\
-    Ctrl Shift <Key>-: smaller-vt-font()
+    Ctrl Shift <Key>-: smaller-vt-font() \n\
     Ctrl <Btn1Down>: ignore() \n\
     Ctrl <Btn2Down>: ignore() \n\
     Ctrl <Btn3Down>: ignore() \n\
@@ -216,23 +216,23 @@ xterm_light.vt100.background:   #efefef
 xterm_light.vt100.color0:  #000000
 xterm_light.vt100.color8:  #4f4f4f
 ! red
-xterm_light.vt100.color1:  #cc1010 
-xterm_light.vt100.color9:  #ff7f7f 
+xterm_light.vt100.color1:  #910000 
+xterm_light.vt100.color9:  #cc0000 
 ! green
-xterm_light.vt100.color2:  #009e00
-xterm_light.vt100.color10: #66cc66 
+xterm_light.vt100.color2:  #008000
+xterm_light.vt100.color10: #00a600 
 ! yellow
-xterm_light.vt100.color3:  #9e9e28
-xterm_light.vt100.color11: #cfcf08
+xterm_light.vt100.color3:  #a6a600
+xterm_light.vt100.color11: #d9d900
 ! blue
-xterm_light.vt100.color4:  #3a3ae6
-xterm_light.vt100.color12: #9999ff
+xterm_light.vt100.color4:  #000087
+xterm_light.vt100.color12: #0000ff
 ! magenta
-xterm_light.vt100.color5:  #ab22ab
-xterm_light.vt100.color13: #e695e6
+xterm_light.vt100.color5:  #800080
+xterm_light.vt100.color13: #bf00bf
 ! cyan
-xterm_light.vt100.color6:  #158c8c
-xterm_light.vt100.color14: #00cccc
+xterm_light.vt100.color6:  #006666
+xterm_light.vt100.color14: #008c8c
 ! white
 xterm_light.vt100.color7:  #d2d2d2 
 xterm_light.vt100.color15: #a2a2a2 
