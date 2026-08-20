@@ -1,9 +1,15 @@
-~/.local/bin/set-desktop-theme.sh
-~/.screenlayout/mode-dual.sh &
+# ~/.screenlayout/mode-dual.sh &
 # hsetroot -solid "#07000d" &
-(sleep 2 && ~/.local/bin/set-desktop-wallpaper.sh) &
 # ~/.fehbg &
+# ~/.local/bin/set-desktop-theme.sh
+# (sleep 1 && ~/.local/bin/set-desktop-wallpaper.sh --auto) &
+~/.config/i3/load-x11-app-defaults.sh &
 picom &
 tint2 &
-(sleep 2 && pa-applet) &
-(sleep 2 && dropbox) &
+xfdesktop &
+nm-applet &
+pa-applet &
+xfce4-clipman &
+cbatticon &
+numlockx on &
+# (sleep 2 && dropbox) &

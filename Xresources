@@ -1,4 +1,4 @@
-! Global
+! Glob/
 xscreensaver.Dialog.bodyFont:	Adwaita Mono10
 xscreensaver.Dialog.errorFont:	Adwaita Mono Bold 10
 xscreensaver.Dialog.labelFont:	Adwaita Mono Bold 10
@@ -95,6 +95,7 @@ xterm_dark.vt100.allowSendEvents: false
 xterm_dark.vt100.scrollBar: false
 xterm_dark.vt100.rightScrollBar: true
 xterm_dark.vt100.bellIsUrgent: true
+
 xterm_dark.vt100.faceSize1: 8
 xterm_dark.vt100.faceSize2: 9
 xterm_dark.vt100.faceSize3: 10
@@ -191,6 +192,7 @@ xterm_light.vt100.allowSendEvents: false
 xterm_light.vt100.scrollBar: false
 xterm_light.vt100.rightScrollBar: true
 xterm_light.vt100.bellIsUrgent: true
+
 xterm_light.vt100.faceSize1: 8
 xterm_light.vt100.faceSize2: 9
 xterm_light.vt100.faceSize3: 10
@@ -251,4 +253,3 @@ xterm_light.vt100.color14: #008c8c
 ! white
 xterm_light.vt100.color7:  #d2d2d2 
 xterm_light.vt100.color15: #a2a2a2 
-

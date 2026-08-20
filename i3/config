@@ -23,6 +23,8 @@ font pango:Cascadia Code 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id numlockx
+exec --no-startup-id ~/.config/i3/load-x11-app-defaults.sh 
+exec --no-startup-id xrdb -merge ~/.Xresources
 # exec --no-startup-id xinput disable 15
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -67,7 +69,8 @@ tiling_drag modifier titlebar
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec uxterm
+bindsym $mod+Return exec "uxterm -name UXTerm -class xterm_dark -e 'bash --rcfile $HOME/.bashrc_dark'"
+bindsym $mod+Shift+Return exec "uxterm -name UXTerm -class xterm_light -e 'bash --rcfile $HOME/.bashrc_light'"
 
 # kill focused window
 bindsym $mod+Shift+q kill

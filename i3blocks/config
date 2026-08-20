@@ -1,6 +1,6 @@
 # Guess the weather hourly
 [weather]
-command=echo $(curl -Ss 'https://wttr.in/Aracaju?format=3' | cut -c 16- | head -1)
+command=echo Tempo: $(curl -Ss 'https://wttr.in/Aracaju-SE?format=3' | cut -c 16- | head -1)
 interval=3600
 color=#e76f51
 
@@ -10,7 +10,7 @@ interval=30
 color=#88cc88
 
 [disk]
-command=printf "HDD: %dGB livres\n" $(df -h | grep -i \/$ | awk '{ print $4 }')
+command=printf "HDD: %s livres\n" $(df -h | grep -i \/$ | awk '{ print $4 }')
 interval=900
 color=#e76f51
 
@@ -38,6 +38,6 @@ color=#e76f51
 
 # Data e Hora
 [time]
-command=date +'%d/%m (%A), %H:%M'
+command=date +'%d de %B (%A), %H:%M'
 interval=5
 color=#88cc88

@@ -42,8 +42,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Gelb-chubby</name>
-    <titleLayout>NLIMC</titleLayout>
+    <name>Orang</name>
+    <titleLayout>NDLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -57,26 +57,26 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Tahoma</name>
-      <size>9</size>
+      <name>IBM Plex Sans</name>
+      <size>8</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Tahoma</name>
-      <size>9</size>
+      <name>IBM Plex Sans</name>
+      <size>8</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Tahoma</name>
-      <size>9</size>
+      <name>IBM Plex Sans</name>
+      <size>8</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -84,8 +84,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Tahoma</name>
-      <size>9</size>
+      <name>IBM Plex Sans</name>
+      <size>8</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -93,8 +93,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Tahoma</name>
-      <size>9</size>
+      <name>IBM Plex Sans</name>
+      <size>8</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -102,8 +102,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Tahoma</name>
-      <size>9</size>
+      <name>IBM Plex Sans</name>
+      <size>8</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -120,7 +120,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>3</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>Desktop #1</name>
@@ -306,6 +306,11 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
+    <keybind key="C-A-S-F11">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
     <keybind key="C-A-S-F12">
       <action name="Exit">
         <prompt>yes</prompt>
@@ -384,25 +389,25 @@
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
-          <command>~/.local/bin/set-monitor.sh</command>
+        <command>~/.local/bin/set-monitor.sh</command>
       </action>
     </keybind>
-    <keybind key="W-C-S-Up">
-      <action name="Execute">
-        <command>~/.local/bin/set-external-monitor-backlight.sh + notify</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-S-Down">
-      <action name="Execute">
-        <command>~/.local/bin/set-external-monitor-backlight.sh - notify</command>
-      </action>
-    </keybind>
-    <keybind key="W-A-S-Up">
+    <!--<keybind key="W-C-S-Up">-->
+    <!--<action name="Execute">-->
+    <!--<command>~/.local/bin/set-external-monitor-backlight.sh + notify</command>-->
+    <!--</action>-->
+    <!--</keybind>-->
+    <!--<keybind key="W-C-S-Down">-->
+    <!--<action name="Execute">-->
+    <!--<command>~/.local/bin/set-external-monitor-backlight.sh - notify</command>-->
+    <!--</action>-->
+    <!--</keybind>-->
+    <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>~/.local/bin/set-internal-monitor-backlight.sh + notify</command>
       </action>
     </keybind>
-    <keybind key="W-A-S-Down">
+    <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
         <command>~/.local/bin/set-internal-monitor-backlight.sh - notify</command>
       </action>
@@ -417,7 +422,7 @@
         <command>xfce4-screenshooter -rc</command>
       </action>
     </keybind>
-    <keybind key="W-l">
+    <keybind key="W-S-l">
       <action name="Execute">
         <command>xlock -mode space</command>
       </action>
@@ -427,7 +432,7 @@
         <command>pamixer --set-limit 150 --allow-boost -i 5</command>
       </action>
       <action name="Execute">
-        <command>sh -c 'notify-send -i /usr/share/icons/Humanity/apps/24/gnome-volume-control.svg -u low -t 2000 -e -r 42 "Aumentando para $(pamixer --get-volume)%"'</command>
+        <command>sh -c 'notify-send -i /usr/share/icons/gnome/24x24/apps/multimedia-volume-control.png -u low -t 2000 -e -r 42 "Aumentando para $(pamixer --get-volume)%"'</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
@@ -435,7 +440,7 @@
         <command>pamixer --set-limit 150 --allow-boost -d 5</command>
       </action>
       <action name="Execute">
-        <command>sh -c 'notify-send -i /usr/share/icons/Humanity/apps/24/gnome-volume-control.svg -u low -t 2000 -e -r 42 "Diminuindo para $(pamixer --get-volume)%"'</command>
+        <command>sh -c 'notify-send -i /usr/share/icons/gnome/24x24/apps/multimedia-volume-control.png -u low -t 2000 -e -r 42 "Diminuindo para $(pamixer --get-volume)%"'</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
@@ -460,12 +465,12 @@
     </keybind>
     <keybind key="XF86AudioNext">
       <action name="Execute">
-        <command>playerctl next</command>
+        <command>playerctl -p spotify next</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPrev">
       <action name="Execute">
-        <command>playerctl previous</command>
+        <command>playerctl -p spotify previous</command>
       </action>
     </keybind>
     <keybind key="XF86Mail">
@@ -491,9 +496,18 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>uxterm</name>
+          <name>UXTerm</name>
         </startupnotify>
-        <command>uxterm</command>
+        <command>uxterm -name UXTerm -class xterm_dark -e 'bash --rcfile ~/.bashrc_dark'</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-Return">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>UXTerm</name>
+        </startupnotify>
+        <command>uxterm -name UXTerm -class xterm_light -e 'bash --rcfile ~/.bashrc_light'</command>
       </action>
     </keybind>
   </keyboard>
@@ -831,7 +845,7 @@
       </mousebind>
     </context>
   </mouse>
-  <menu>
+      <menu>
     <!-- You can specify more than one menu file in here and they are all loaded,
        just don't make menu ids clash or, well, it'll be kind of pointless -->
     <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
