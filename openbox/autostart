@@ -3,13 +3,14 @@
 # ~/.fehbg &
 # ~/.local/bin/set-desktop-theme.sh
 # (sleep 1 && ~/.local/bin/set-desktop-wallpaper.sh --auto) &
-~/.config/i3/load-x11-app-defaults.sh &
+xrdb -merge ~/.Xresources &
+xscreensaver --no-splash &
 picom &
 tint2 &
 xfdesktop &
 nm-applet &
 pa-applet &
-xfce4-clipman &
+# xfce4-clipman &
 cbatticon &
 numlockx on &
 # (sleep 2 && dropbox) &

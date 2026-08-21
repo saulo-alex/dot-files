@@ -17,13 +17,12 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Cascadia Code 8
+font pango:IBM Plex Mono 9
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id numlockx
-exec --no-startup-id ~/.config/i3/load-x11-app-defaults.sh 
 exec --no-startup-id xrdb -merge ~/.Xresources
 # exec --no-startup-id xinput disable 15
 
@@ -180,6 +179,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Você pressionou o botão de sair. Quer realmente sair do i3?' -B 'Sim, saia do i3' 'i3-msg exit'"
+bindsym $mod+Shift+d exec "i3-nagbar -t warning -m 'Você pressionou o botão para configurar o monitor. Escolha o modo a aplicar: ' -b 'Apenas externo' '~/.screenlayout/mode-only-external.sh' -b 'Apenas interno' '~/.screenlayout/mode-only-internal.sh' -b 'Dual' '~/.screenlayout/mode-dual.sh'"
 bindsym $mod+Shift+F11 exec "i3-nagbar -t warning -m 'Você pressionou o botão de reiniciar. Quer realmente REINICIAR a máquina?' -B 'Sim, meu caro!' 'systemctl reboot'"
 bindsym $mod+Shift+F12 exec "i3-nagbar -t warning -m 'Você pressionou o botão de desligar. Quer realmente DESLIGAR a máquina?' -B 'Sim, meu caro!' 'systemctl poweroff'"
 
