@@ -222,7 +222,7 @@ bindsym $mod+r mode "resize"
 # Cores principais
 set $primary        #ff4c00
 set $secondary      #00ffeb
-set $terciary       #ffaa86
+set $terciary       #00ff00
 set $warning        #ffff00
 set $gray_light     #fafafa
 set $gray_medium    #777777
