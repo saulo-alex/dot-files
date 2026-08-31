@@ -1,7 +1,8 @@
-;; Desabilite os backups automáticos
+;; -*- lexical-binding: t; -*-
+;; Não faça backup automático
 (setf backup-inhibited 1)
 ;; Não suje meu init.el emacs, use esse aqui!
-(setq custom-file "~/.emacs.d/custom")
+(setq custom-file "~/.emacs.d/custom.el")
 (column-number-mode 1)
 (menu-bar-mode -1)
 ;; cópias também vão para o clipboard
@@ -41,4 +42,5 @@
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ; mova em sentido anti-horário
-
+;; Permita que modificações de temas seja aplicada ao final e efetivamente seja aplicadas
+(load-file "~/.emacs.d/custom.el")
