@@ -8,10 +8,14 @@
 (require 'xclip)
 (xclip-mode 1)
 ;; auto complete
+(require 'company)
 (global-company-mode)
 ;; ido deixa o find-file ou switch-to-buffer mais dinâmico
 ;; (ido-mode)
 ;; (ido-everywhere 1)
+;; ffap melhora o fluxo de encontrar arquivos e permite abrir arquivos sobre o ponto de forma direta
+(require 'ffap)
+(ffap-bindings)
 ;; Normalmente o alt+shift é visto como alt pelo emacs, faça-lhe diferenciar 
 (with-eval-after-load 'term
   ; Se quiser mapear outras, use C-q para visualizar o código
@@ -36,4 +40,5 @@
 (global-set-key (kbd "M-S-<down>") 'scroll-other-window)
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
+(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ; mova em sentido anti-horário
 
