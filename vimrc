@@ -290,6 +290,11 @@ endif
 map <C-w>z :windo if &previewwindow \| bdelete \| endif \| pclose!<CR>
 map [[ ?{<CR>w99[{
 map ]] j0[[%/{<CR>
+" Faz alguns comandos do readline (bash) funcionar corretamente
+tmap <M-b> <ESC>b
+tmap <M-f> <ESC>f
+tmap <M-d> <ESC>d
+tmap <M-.> <ESC>.
 
 " LSP
 map <leader>Ld :LspDiag show<CR>
