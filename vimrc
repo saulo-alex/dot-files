@@ -245,8 +245,8 @@ command! DeleteEmptyBuffers call DeleteEmptyBuffers()
 " -----------------------------------------------
 "                  mapeamentos
 " -----------------------------------------------
-map <C-s> :write!<CR>
-imap <C-s> <ESC>:write!<CR>a
+map <C-s> :write<CR>
+imap <C-s> <ESC>:write<CR>a
 map <F3> :make<CR>
 map <F5> :term<CR>
 map <F6> :ls<CR>
@@ -355,6 +355,7 @@ set ttymouse=sgr
 set ttyfast
 set autoread
 "set scrolloff=8
+set ignorecase
 set incsearch
 set hlsearch
 
