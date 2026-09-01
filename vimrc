@@ -26,18 +26,18 @@ call plug#begin('~/.vim/plugged')
 
     " Temas
     Plug 'yasukotelin/shirotelin'
-    Plug 'haystackandroid/vimspectr'
-    Plug 'nanotech/jellybeans.vim'
-    Plug 'jaredgorski/spacecamp'
-    Plug 'cormacrelf/vim-colors-github'
+    "Plug 'haystackandroid/vimspectr'
+    "Plug 'nanotech/jellybeans.vim'
+    "Plug 'jaredgorski/spacecamp'
+    "Plug 'cormacrelf/vim-colors-github'
     Plug 'chasinglogic/modus-themes-vim'
     Plug 'bdesham/biogoo'
-    Plug 'morhetz/gruvbox'
-    Plug 'ayu-theme/ayu-vim'
-    Plug 'trapd00r/neverland-vim-theme'
-    Plug 'marcopaganini/mojave-vim-theme'
-    Plug 'luckydev/150colors'
-    Plug 'dracula/vim', { 'name': 'dracula' }
+    "Plug 'morhetz/gruvbox'
+    "Plug 'ayu-theme/ayu-vim'
+    "Plug 'trapd00r/neverland-vim-theme'
+    "Plug 'marcopaganini/mojave-vim-theme'
+    "Plug 'luckydev/150colors'
+    "Plug 'dracula/vim', { 'name': 'dracula' }
 call plug#end()
 
 " -----------------
@@ -320,7 +320,7 @@ set nostartofline
 set shell=/usr/bin/bash\ --init-file\ ~/.bashrc_vim_term
 set foldcolumn=1
 set numberwidth=3
-set number
+set relativenumber
 set wrap
 set textwidth=0
 set encoding=utf8
