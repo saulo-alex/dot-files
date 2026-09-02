@@ -179,6 +179,8 @@ function! ApplyTheme()
     "highlight Normal guibg=NONE ctermbg=NONE
 
     hi MatchParen cterm=underline guifg=lightred guibg=NONE gui=underline
+    hi StatusLineTerm guibg=lightgreen guifg=black
+    hi StatusLineTermNC guibg=#555555 guifg=black
 endfunc
 
 function! SetupLangServers()
@@ -423,6 +425,10 @@ call ApplyTheme()
 " Deve ser definido após ApplyTheme() por causa da não-existência de g:colorscheme
 autocmd! ColorScheme * let m = expand("<amatch>") |
             \ execute('call ForceUpdateColorScheme(m)') 
+augroup TerminalStatusLine
+    autocmd!
+    autocmd TerminalWinOpen * setlocal statusline=\ (#%{%winnr()%})\ Terminal\ (on\ bash)\ @\ %n
+augroup END
 
 " Configura os servidores das linguagens
 call SetupLangServers()
