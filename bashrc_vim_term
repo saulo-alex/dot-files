@@ -2,3 +2,8 @@
 
 PS1='\w \$ '
 HISTFILE=~/.bash_vim_history
+# Instalacao das Funcoes ZZ (www.funcoeszz.net)
+export ZZOFF=""  # desligue funcoes indesejadas
+export ZZPATH="/usr/bin/funcoeszz"  # script
+export ZZDIR=""    # pasta zz/
+source "$ZZPATH"
