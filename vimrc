@@ -271,6 +271,10 @@ if exists("$WINDIR")
     map <leader>j :tag <C-r><C-w><CR>
 endif
 map gF :e <cfile><CR>
+" Altera para modo binário
+map gh :%!xxd<CR>
+" Reverte para modo texto
+map gH :%!xxd -r<CR>
 map <silent> <C-w>q :call PreventExit()<CR>
 map <leader>f :Explo<CR>
 map <leader>. 5zh
