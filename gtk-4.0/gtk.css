@@ -1,0 +1,112 @@
+/* ==========================================================================
+   CONFIGURAÇÃO GLOBAL DE FONTE
+   ========================================================================== */
+* {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    -gtk-icon-size: 14px; /* Ícones ligeiramente menores para acompanhar a fonte */
+}
+
+/* ==========================================================================
+   COMPACTAÇÃO VERTICAL EXTREMA (PARA TELAS 768px)
+   ========================================================================== */
+
+/* Barras de Título (Headerbars) super compactas */
+headerbar {
+    min-height: 30px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin: 0;
+}
+
+/* Título e subtítulo da barra */
+headerbar .title,
+headerbar .subtitle {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+/* Botões de controle da janela (Fechar, Minimizar, Maximizar) */
+windowcontrols button {
+    min-width: 16px;
+    min-height: 16px;
+    padding: 0;
+    margin: 0 2px;
+}
+
+/* ==========================================================================
+   WIDGETS, BOTÕES E ENTRADAS DE TEXTO
+   ========================================================================== */
+
+
+/* Botões gerais do sistema */
+button {
+    min-height: 16px;
+    min-width: 16px;
+    padding: 2px 6px;
+    margin: 1px;
+}
+
+/* Campos de entrada de texto */
+entry, textview {
+    min-height: 16px;
+    padding: 2px 4px;
+}
+
+/* Abas (Tabs) de aplicativos como Gedit, Console, etc. */
+tabbar tab {
+    min-height: 22px;
+    padding: 2px 6px;
+}
+
+/* Menus de contexto e Popovers */
+popover, menu {
+    padding: 2px;
+}
+
+/* ==========================================================================
+   LISTAS, NAVEGAÇÃO E GRIDS (SIDEBARS)
+   ========================================================================== */
+
+/* Linhas de listas (Configurações, Arquivos) e barras laterais */
+list row, 
+.navigation-sidebar row,
+treeview row {
+    min-height: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+/* Reduz o recuo interno de árvores de arquivos */
+treeview {
+    -GtkTreeView-horizontal-separator: 4;
+    -GtkTreeView-vertical-separator: 1;
+}
+
+/* ==========================================================================
+   COMPATIBILIDADE COM TEMA ESCURO (DARK MODE)
+   ========================================================================== */
+/* O Libadwaita usa variáveis dinâmicas (@theme_bg_color, @theme_text_color).
+   As regras abaixo garantem bordas e contrastes nítidos sem quebrar o Dark Mode. */
+
+@media (prefers-color-scheme: dark) {
+    /* Melhora o contraste de bordas em fontes muito pequenas no tema escuro */
+    button, entry, headerbar {
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+    
+    /* Evita que textos pequenos borrem ou fiquem ilegíveis no escuro */
+    * {
+        text-shadow: none;
+        -gtk-icon-shadow: none;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    button, entry, headerbar {
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+}
