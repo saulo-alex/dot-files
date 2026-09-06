@@ -151,7 +151,7 @@ function! ApplyTheme()
     let s:hour_now = strftime("%H")
     let s:minute_now = strftime("%M")
 
-    set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m\ %=%{FugitiveStatusline()}\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
+    set statusline=\ Σ\ (#%{%winnr()%})\ %-{&modifiable?'%%':'NM'}%-{&readonly?'RO':'%%'}%-{&modified?'++':'%%'}\ %-F\ @\ %n\ %=%{FugitiveStatusline()}\ %W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
 
     "set statusline=\ Σ\ (#%{%winnr()%})\ %-F\ @\ %n\ %-m%=\ %R%W%Y\ %l,%c\ %p%%\ [%{&fileencoding}\ %{&fileformat}]\ Σ\ 
     " ---- Dia: entre 7h as 17h15
@@ -264,7 +264,7 @@ map <leader>eo :copen<CR>
 map <leader>en :cnext<CR>
 map <leader>ep :cprevious<CR>
 map <leader>ec :cclose<CR>
-map <F8> :Lexplore 12<CR>
+map <F8> :Lexplore<CR>
 nmap <F9> :TagbarToggle<CR>
 " no Windows o CTRL-] para navegar entre tags não funciona!
 if exists("$WINDIR")
@@ -342,6 +342,9 @@ endif
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+" não precisa equalizar as janelas ao abrir uma nova ao redor; desativei a fim
+" de :vsplit funcionar normalmente
+set noequalalways
 set showcmd
 set laststatus=2
 set expandtab
@@ -369,6 +372,10 @@ set autoread
 set ignorecase
 set incsearch
 set hlsearch
+" quebra linha (com 'wrap') sem quebrar palavras
+set linebreak
+" caractere que indica que a linha é continuação da última (logicamente) (com 'wrap')
+set showbreak=\\_
 
 " set path+=**
 
@@ -408,8 +415,11 @@ let g:user_emmet_settings = {
 
 
 " ------------------ Configuração do netrw --------------------
+let g:netrw_winsize = 15
 let g:netrw_hide = 1
+let g:netrw_banner = 1
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_liststyle = 0
 let g:netrw_sizestyle = 'H'
 let g:netrw_sort_by = 'name'
 let g:netrw_sort_sequence = '\/$,\.html$,\.css$,\.js$,\.php\*\=$,\.pl\*\=$,\.pm$,\.md$,\.txt$,\.\(png\|jpeg\|jpg\|gif\|webp\)$,\.py$\*\=$,\.sh\*\=$,\.java$,\.pas$,\.c$,\.cpp$,\.h$,\.hpp$'
