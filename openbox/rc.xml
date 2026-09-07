@@ -3,7 +3,7 @@
         Copy the file to $HOME/.config/openbox/ instead. -->
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
-    <strength>10</strength>
+    <strength>5</strength>
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
   <focus>
@@ -178,6 +178,21 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <keybind key="A-F7">
+        <action name="Resize"/>
+    </keybind>
+    <keybind key="A-F6">
+        <action name="Move"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
@@ -189,14 +204,14 @@
     </keybind>
     <keybind key="W-Up">
         <action name="MoveResizeTo">
-            <width client="yes">100%</width>
+            <width>100%</width>
             <height>50%</height>
             <y>0</y>
         </action>
     </keybind>
     <keybind key="W-Down">
         <action name="MoveResizeTo">
-            <width client="yes">100%</width>
+            <width>100%</width>
             <height>50%</height>
             <y>50%</y>
         </action>
