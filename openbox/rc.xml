@@ -179,10 +179,10 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="A-F7">
-        <action name="Resize"/>
+      <action name="Resize"/>
     </keybind>
     <keybind key="A-F6">
-        <action name="Move"/>
+      <action name="Move"/>
     </keybind>
     <keybind key="W-Left">
       <action name="UnmaximizeFull"/>
@@ -203,18 +203,20 @@
       </action>
     </keybind>
     <keybind key="W-Up">
-        <action name="MoveResizeTo">
-            <width>100%</width>
-            <height>50%</height>
-            <y>0</y>
-        </action>
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>100%</width>
+        <height client="yes">50%</height>
+        <y>0</y>
+      </action>
     </keybind>
     <keybind key="W-Down">
-        <action name="MoveResizeTo">
-            <width>100%</width>
-            <height>50%</height>
-            <y>50%</y>
-        </action>
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>100%</width>
+        <height client="yes">50%</height>
+        <y>50%</y>
+      </action>
     </keybind>
     <keybind key="W-Right">
       <action name="UnmaximizeFull"/>

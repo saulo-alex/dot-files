@@ -4,13 +4,12 @@
 # ~/.local/bin/set-desktop-theme.sh
 # (sleep 1 && ~/.local/bin/set-desktop-wallpaper.sh --auto) &
 xrdb -merge ~/.Xresources &
-xscreensaver --no-splash &
 picom &
 tint2 &
 xfdesktop &
 nm-applet &
-pa-applet &
-# xfce4-clipman &
+# pa-applet &
 cbatticon &
 numlockx on &
+xscreensaver --no-splash &
 # (sleep 2 && dropbox) &
