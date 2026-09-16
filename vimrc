@@ -114,7 +114,9 @@ command! DeleteEmptyBuffers call g:DeleteEmptyBuffers()
 " -----------------------------------------------
 map <C-s> :write<CR>
 imap <C-s> <ESC>:write<CR>a
-map <F3> :make<CR>
+" make! pula o primeiro erro, que pode ser útil porque o make sempre retorna
+" algo mesmo estando tudo bem...
+map <F3> :make!<CR>
 map <F5> :term<CR>
 map <F6> :ls<CR>
 map <leader>r :source %<CR>
@@ -301,5 +303,5 @@ let g:colorscheme = "default"
 if $TERM_COLORSCHEME == 'light' || (strftime('H') > 5 && strftime('H') < 18)
     colorscheme biogoo
 else
-    colorscheme wildcharm
+    colorscheme black
 endif
