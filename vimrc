@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ap/vim-css-color'
     Plug 'yegappan/lsp'
     "Plug 'github/copilot.vim'
+    Plug 'dense-analysis/ale'
     " Temas
     Plug 'yasukotelin/shirotelin'
     Plug 'jaredgorski/spacecamp'
@@ -249,6 +250,11 @@ let g:perl_include_pod = 1         " Destaca POD (documentação)
 let g:perl_want_scope_in_variables = 1  " Escopo de variáveis
 let g:perl_sub_signatures = 1      " Assinaturas de subrotinas
 
+" Perl linter
+" Alerta: Instale o módulo Perl::Critic com cpanm Perl::Critic
+let g:ale_linters = { 'perl': ['perl', 'perlcritic'] }
+let g:ale_perl_perlcritic_showrules = 1
+
 "  C
 let g:c_no_curly_error = 1
 let g:c_no_bracket_error = 1
@@ -301,7 +307,9 @@ augroup END
 " isso aqui é um bug!
 let g:colorscheme = "default"
 if $TERM_COLORSCHEME == 'light' || (strftime('H') > 5 && strftime('H') < 18)
-    colorscheme biogoo
+    colorscheme lunaperche
 else
     colorscheme black
 endif
+
+
