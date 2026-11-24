@@ -5,5 +5,5 @@
 #
 GSK_RENDERER=ngl 
 MANPAGER=less
-PERLDOC_PAGER="less +-C -E"
+PERLDOC_PAGER="less -c --use-color"
 PERLDOC_SRC_PAGER="vim -R"
