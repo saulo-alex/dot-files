@@ -1,3 +1,4 @@
 sub afterinit {
-    push @DB::typeahead, 'use v5.44;';
+    push @DB::typeahead,
+        'use v5.44; no strict "vars";';
 }
