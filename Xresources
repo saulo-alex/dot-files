@@ -84,7 +84,7 @@ xterm_dark.vt100.faceSize: 10
 xterm_dark.vt100.utf8: 1
 xterm_dark.vt100.utf8Title: true
 xterm_dark.vt100.forceBoxChars: true
-xterm_dark.vt100.allowBoldFonts: true
+xterm_dark.vt100.allowBoldFonts: false
 xterm_dark.vt100.alternateScroll: true
 xterm_dark.vt100.multiScroll: true
 xterm_dark.vt100.scrollTtyOutput: false
@@ -257,7 +257,7 @@ xterm_light.vt100.faceSize: 10
 xterm_light.vt100.utf8: 1
 xterm_light.vt100.utf8Title: true
 xterm_light.vt100.forceBoxChars: true
-xterm_light.vt100.allowBoldFonts: true
+xterm_light.vt100.allowBoldFonts: false
 xterm_light.vt100.alternateScroll: true
 xterm_light.vt100.multiScroll: true
 xterm_light.vt100.scrollTtyOutput: false
@@ -342,8 +342,8 @@ xterm_light.vt100.visualBellLine: true
 xterm_light.vt100.background:         #ffffff
 xterm_light.vt100.foreground:         #000000
 !xterm_light.vt100.cursorColor:        #0000ff
-xterm_light.vt100.highlightColor:     #cce0ff
-xterm_light.vt100.highlightTextColor: #000000
+!xterm_light.vt100.highlightColor:     #cccccc
+xterm_light.vt100.highlightTextColor: #991111
 xterm_light.vt100.boldColors:         true
 
 xterm_light.vt100.color0:  #000000

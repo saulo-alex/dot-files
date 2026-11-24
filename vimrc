@@ -13,13 +13,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'ap/vim-css-color'
     Plug 'yegappan/lsp'
-    "Plug 'github/copilot.vim'
+    "Plug 'github/copilot.vim
+    "Plug 'dense-analysis/ale'
     " Temas
     Plug 'yasukotelin/shirotelin'
     Plug 'jaredgorski/spacecamp'
-    Plug 'chasinglogic/modus-themes-vim'
-    Plug 'bdesham/biogoo'
-    Plug 'morhetz/gruvbox'
+    Plug 'leviosa42/vim-github-theme'
+    Plug 'lunacookies/vim-colors-xcode'
+    Plug 'rakr/vim-one'
 call plug#end()
 
 if has('termguicolors')
@@ -71,12 +72,6 @@ def s:configurelsp(): void
              filetype: ['php'],
              path: '/usr/bin/intelephense',
              args: ['--stdio']
-        },
-        {
-             name: 'ruby-lsp',
-             filetype: ['ruby', 'eruby'],
-             path: '/usr/bin/ruby-lsp',
-             args: []
         },
     ]
     autocmd User LspSetup call LspAddServer(g:lspservers)
@@ -255,6 +250,11 @@ let g:perl_include_pod = 1         " Destaca POD (documentação)
 let g:perl_want_scope_in_variables = 1  " Escopo de variáveis
 let g:perl_sub_signatures = 1      " Assinaturas de subrotinas
 
+" Perl linter
+" Alerta: Instale o módulo Perl::Critic com cpanm Perl::Critic
+let g:ale_linters = { 'perl': ['perl', 'perlcritic'] }
+let g:ale_perl_perlcritic_showrules = 1
+
 "  C
 let g:c_no_curly_error = 1
 let g:c_no_bracket_error = 1
@@ -307,7 +307,10 @@ augroup END
 " isso aqui é um bug!
 let g:colorscheme = "default"
 if $TERM_COLORSCHEME == 'light' || (strftime('H') > 5 && strftime('H') < 18)
-    colorscheme wildcharm
+    colorscheme xcodelighthc
+    " hi Normal guibg=NONE
 else
     colorscheme black
 endif
+
+

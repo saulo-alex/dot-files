@@ -1,0 +1,3 @@
+sub afterinit {
+    push @DB::typeahead, 'use v5.44;';
+}
