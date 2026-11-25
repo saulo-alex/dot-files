@@ -2,7 +2,7 @@
 #include "/usr/share/X11/app-defaults/UXTerm-color"
 #include "/usr/share/X11/app-defaults/XCalc-color"
 #include "/usr/share/X11/app-defaults/XClock-grandfather"
-#include "/usr/share/X11/app-defaults/Xmag"
+! #include "/usr/share/X11/app-defaults/Xmag"
 #include "/usr/share/X11/app-defaults/XFontSel"
 
 ! Glob/
@@ -80,7 +80,7 @@ xterm_dark.ttyModes: erase ^?
 xterm_dark.vt100.faceName: Adwaita Mono:style=Regular:antialias=true
 !xterm_dark.vt100.faceName: Cascadia Code:style=Regular:antialias=true
 !xterm_dark.vt100.faceName: Ubuntu Mono:style=Regular:antialias=true
-xterm_dark.vt100.faceSize: 10
+xterm_dark.vt100.faceSize: 9
 xterm_dark.vt100.utf8: 1
 xterm_dark.vt100.utf8Title: true
 xterm_dark.vt100.forceBoxChars: true
@@ -253,7 +253,7 @@ xterm_light.ttyModes: erase ^?
 !xterm_light.vt100.faceName: IBM Plex Mono:style=Regular:antialias=true
 !xterm_light.vt100.faceName: Hack:style=Medium:antialias=true
 xterm_light.vt100.faceName: Adwaita Mono:style=Regular:antialias=true
-xterm_light.vt100.faceSize: 10
+xterm_light.vt100.faceSize: 9
 xterm_light.vt100.utf8: 1
 xterm_light.vt100.utf8Title: true
 xterm_light.vt100.forceBoxChars: true
@@ -343,7 +343,7 @@ xterm_light.vt100.background:         #ffffff
 xterm_light.vt100.foreground:         #000000
 !xterm_light.vt100.cursorColor:        #0000ff
 !xterm_light.vt100.highlightColor:     #cccccc
-xterm_light.vt100.highlightTextColor: #991111
+xterm_light.vt100.highlightTextColor: #ccff99
 xterm_light.vt100.boldColors:         true
 
 xterm_light.vt100.color0:  #000000
