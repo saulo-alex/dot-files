@@ -141,13 +141,19 @@ else
 fi
 
 PATH="$PATH:/opt/lampp/bin/:$HOME/.local/bin/:$HOME/.config/composer/vendor/bin"
-export PATH
 
 # pacotes locais com cpanm
 export PATH="$HOME/.perl5/bin:$PATH"
 eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
 
 QT_QPA_PLATFORMTHEME=qt6ct; export QT_QPA_PLATFORMTHEME
+
+# Ruby local (apenas libs)
+# PATH="$PATH:$HOME/.gem/bin"
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+# export global e final!
+export PATH
 
 # ---------------------------------
 # Programas automáticos
